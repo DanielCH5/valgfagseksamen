@@ -34,11 +34,17 @@ $page = $_GET['page'] ?? 'login';
                 Login
             </button>
 
-            <section class="col-12 d-flex justify-content-end">
-                <button class="col-1 py-2">
-                    <img src="gear.svg" width="30px" alt="Settings">
-                </button>
+            <section class="col-12 d-flex">
+                <section class="col-3 popup p-2">
+                    
+                </section>
+                <section class="col-9 d-flex justify-content-end">
+                    <button class="col-1 py-2">
+                        <img src="gear.svg" width="30px" alt="Settings">
+                    </button>
+                </section>
             </section>
+
         </main>
 
 
