@@ -30,14 +30,14 @@ $page = $_GET['page'] ?? 'login';
                     <input type="text" placeholder="Username" class="submit-name-input">
                 </div>
                 <div class="login">
-                    <button class="login-btn">
+                    <button class="login-btn" onclick="setUsername()">
                         Login
                     </button>
                 </div>
             </div>
 
             <div class="settings">
-                <div class="menuItem">
+                <div class="menuItem" onclick="clearUsername()">
                     <div class="menuItemKey">
                         Esc
                     </div>
@@ -58,6 +58,7 @@ $page = $_GET['page'] ?? 'login';
 
     <?php endif; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
