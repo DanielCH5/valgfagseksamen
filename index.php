@@ -38,7 +38,9 @@ $page = $_GET['page'] ?? 'login';
             </button>
 
             <section class="col-12 d-flex justify-content-end">
-                <button class="col-1 py-2">X</button>
+                <button class="col-1 py-2">
+                    <img src="gear.svg" width="30px" alt="Settings">
+                </button>
             </section>
         </main>
 
