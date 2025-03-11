@@ -15,37 +15,45 @@ $page = $_GET['page'] ?? 'login';
 <body>
     <?php if ($page === 'login'): ?>
 
-        <header class="d-flex justify-content-center col-12">
-            <h1 class="col-4">GAME UI</h1>
-        </header>
 
-        <main class="d-flex justify-content-center align-items-center flex-column login-form">
-
-            <section class="col-6 welcome">
-                <h2>Welcome</h2>
-            </section>
-
-            <section class="username col-4 d-flex justify-content-center">
-                <input type="text" placeholder="Username" class="col-12 py-2">
-            </section>
-
-
-            <button class="col-2 login-btn py-2">
-                Login
-            </button>
-
-            <section class="col-12 d-flex">
-                <section class="col-3 popup p-2">
-                    
-                </section>
-                <section class="col-9 d-flex justify-content-end">
-                    <button class="col-1 py-2">
-                        <img src="gear.svg" width="30px" alt="Settings">
+        <div class="container">
+            <div class="title">
+                <h1>GAME UI</h1>
+            </div>
+            <div class="login-form">
+                <div class="welcome">
+                    <div class="welcome-title">
+                        <h2>Welcome <span id="indtastetUsername"></span><span class="inputCursor"></span></h2>
+                    </div>
+                </div>
+                <div class="username">
+                    <input type="text" placeholder="Username" class="submit-name-input">
+                </div>
+                <div class="login">
+                    <button class="login-btn">
+                        Login
                     </button>
-                </section>
-            </section>
+                </div>
+            </div>
 
-        </main>
+            <div class="settings">
+                <div class="menuItem">
+                    <div class="menuItemKey">
+                        Esc
+                    </div>
+                    <div class="menuPic">
+                        <img src="gear.svg" width="40px" alt="Settings">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    <?php elseif ($page === 'test'): ?>
+
+
 
 
     <?php endif; ?>
