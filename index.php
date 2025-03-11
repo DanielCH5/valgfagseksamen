@@ -29,9 +29,6 @@ $page = $_GET['page'] ?? 'login';
                 <input type="text" placeholder="Username" class="col-12 py-2">
             </section>
 
-            <section class="password col-4 d-flex justify-content-center">
-                <input type="text" placeholder="Password" class="col-12 py-2">
-            </section>
 
             <button class="col-2 login-btn py-2">
                 Login
