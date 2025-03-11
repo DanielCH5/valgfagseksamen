@@ -33,7 +33,7 @@ $page = $_GET['page'] ?? 'login';
                 <input type="text" placeholder="Password" class="col-12 py-2">
             </section>
 
-            <button class="col-2 login-btn">
+            <button class="col-2 login-btn py-2">
                 Login
             </button>
 
