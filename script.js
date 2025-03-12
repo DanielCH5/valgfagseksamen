@@ -4,20 +4,10 @@ const UI = {
     loginButton: document.querySelector('.login-btn'),
     usernameContainer: document.querySelector('.username'),
     inputCursor: document.querySelector('.inputCursor'),
-    indtastetUsername: document.querySelector('#indtastetUsername'),
+    indtastetUsername: document.querySelector('.indtastetUsername'),
 };
 
-function greetUser() {
-    if (localStorage.getItem("userName")) {
-        const userName = localStorage.getItem("userName");
-        UI.usernameContainer.remove();
-        UI.loginButton.innerHTML = "Logging in...";
-        UI.loginButton.disabled = true;
-        typeSentence(userName);
-    }else {
-        return;
-    }
-}
+
 function setUsername(){
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
@@ -31,6 +21,9 @@ async function typeSentence(sentence) {
         UI.indtastetUsername.textContent += letters[i];
     }
     UI.inputCursor.style.display = "none";
+    await waitFor(1000);
+    window.location.href = '/?page=settings';
+
 }
 
 function clearUsername() {
@@ -43,4 +36,18 @@ function waitFor(ms) {
 const Player = {
     name: localStorage.getItem("userName"),
 };
-greetUser();
+function greetUser() {
+    if (localStorage.getItem("userName")) {
+        const userName = localStorage.getItem("userName");
+        UI.usernameContainer.remove();
+        UI.loginButton.innerHTML = "Logging in...";
+        UI.loginButton.disabled = true;
+        typeSentence(userName);
+    }else {
+        return;
+    }
+}
+
+function setName(){
+    UI.indtastetUsername.textContent = Player.name
+}
