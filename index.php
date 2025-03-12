@@ -17,42 +17,154 @@ $page = $_GET['page'] ?? 'login';
 
 
         <div class="container">
-            <div class="title">
-                <h1>GAME UI</h1>
-            </div>
-            <div class="login-form">
-                <div class="welcome">
-                    <div class="welcome-title">
-                        <h2>Welcome <span id="indtastetUsername"></span><span class="inputCursor"></span></h2>
-                    </div>
-                </div>
-                <div class="username">
-                    <input type="text" placeholder="Username" class="submit-name-input">
-                </div>
-                <div class="login">
-                    <button class="login-btn" onclick="setUsername()">
-                        Login
-                    </button>
-                </div>
-            </div>
+            <div class="logincontainer">
 
-            <div class="settings">
-                <div class="menuItem" onclick="clearUsername()">
-                    <div class="menuItemKey">
-                        Esc
+
+                <div class="title">
+                    <h1>GAME UI</h1>
+                </div>
+                <div class="login-form">
+                    <div class="welcome">
+                        <div class="welcome-title">
+                            <h2>Welcome <span id="indtastetUsername"></span><span class="inputCursor"></span></h2>
+                        </div>
                     </div>
-                    <div class="menuPic">
-                        <img src="gear.svg" width="40px" alt="Settings">
+                    <div class="username">
+                        <input type="text" placeholder="Username" class="submit-name-input">
+                    </div>
+                    <div class="login">
+                        <button class="login-btn" onclick="setUsername()">
+                            Login
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings">
+                    <div class="menuItem" onclick="clearUsername()">
+                        <div class="menuItemKey">
+                            Esc
+                        </div>
+                        <div class="menuPic">
+                            <img src="gear.svg" width="40px" alt="Settings">
+                        </div>
                     </div>
                 </div>
             </div>
-
 
         </div>
 
 
-    <?php elseif ($page === 'test'): ?>
+    <?php elseif ($page === 'settings'): ?>
+        <div class="container">
+            <div class="settingscontainer">
 
+                <div class="settingsnav">
+                    <div class="setting1">
+                        Settings
+                    </div>
+                    <div class="setting2">
+                        Settings
+                    </div>
+                    <div class="setting3">
+                        Settings
+                    </div>
+                    <div class="setting4">
+                        Settings
+                    </div>
+                </div>
+
+                <div class="settingsmenu">
+                    <div class="settingsdivA">
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsdivB">
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                        <div class="settingsPunkt">
+                            <div>
+                                Resolution
+                            </div>
+                            <div>
+                                Resolution
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsbuttons">
+
+                </div>
+            </div>
+        </div>
 
 
 

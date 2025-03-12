@@ -29,13 +29,18 @@ body {
 }
 
 .container {
+	height: 100vh;
+
+}
+
+.logincontainer {
+	padding: 50px 0;
+	gap: 20px;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	width: 100%;
-	height: 100vh;
-	padding: 50px 0;
-	gap: 20px;
+	height: 100%;
 }
 
 .title {
@@ -146,10 +151,107 @@ input::placeholder {
 }
 
 @keyframes blink {
-	0%{
+	0% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0;
 	}
+}
+
+.settingscontainer {
+	background-color: grey;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 10% 80% 10%;
+	column-gap: 20px;
+}
+
+.settingsnav {
+	background-color: red;
+	grid-area: 1 / 1/ 1 / 13;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 20px;
+	grid-template-areas: "a a a b b b c c c d d d";
+
+}
+
+.setting1 {
+	grid-area: a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.setting2 {
+	grid-area: b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.setting3 {
+	grid-area: c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.setting4 {
+	grid-area: d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.settingsmenu {
+	background-color: blue;
+	grid-area: 2 / 1 / 2 / 13;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas: 
+	"a a a a a a a a a a a a"
+	"b b b b b b b b b b b b";
+	gap: 20px;
+}
+.settingsdivA{
+	background-color: aqua;
+	grid-area: a;
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;	
+	gap: 20px;
+}
+.settingsdivB{
+	background-color: red;
+	grid-area: b;
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+
+
+.settingsPunkt {
+	background-color: yellow;
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	gap:20px;
+}
+.settingsPunkt div{
+	background-color: green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.settingsbuttons {
+	background-color: orange;
+	grid-area: 3 / 1 / 3 / 13;
 }
