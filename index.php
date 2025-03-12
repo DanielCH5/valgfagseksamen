@@ -202,7 +202,16 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="menuOptionsB">
                     <div class="menuItem">
-
+                        <a href="?page=settings">
+                            <div class="menuItem">
+                                <div class="menuItemKey">
+                                    Esc
+                                </div>
+                                <div class="menuPic">
+                                    <img src="gear.svg" width="40px" alt="Settings">
+                                </div>
+                            </div>
+                        </a>
                     </div>
                     <div class="menuItem">
 
