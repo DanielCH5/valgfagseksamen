@@ -223,14 +223,14 @@ input::placeholder {
 	background-color: aqua;
 	grid-area: a;
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;	
+	grid-template-rows: 2fr 1fr 1fr 1fr;	
 	gap: 20px;
 }
 .settingsdivB{
 	background-color: red;
 	grid-area: b;
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 2fr 1fr 1fr 1fr;
 	gap: 20px;
 }
 

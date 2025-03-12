@@ -107,14 +107,7 @@ $page = $_GET['page'] ?? 'login';
                                 Resolution
                             </div>
                         </div>
-                        <div class="settingsPunkt">
-                            <div>
-                                Resolution
-                            </div>
-                            <div>
-                                Resolution
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="settingsdivB">
                         <div class="settingsPunkt">
@@ -149,14 +142,7 @@ $page = $_GET['page'] ?? 'login';
                                 Resolution
                             </div>
                         </div>
-                        <div class="settingsPunkt">
-                            <div>
-                                Resolution
-                            </div>
-                            <div>
-                                Resolution
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
