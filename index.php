@@ -82,7 +82,7 @@ $page = $_GET['page'] ?? 'login';
                                 Username
                             </div>
                             <div class="indtastetUsername">
-                                Username has not been entered yet.
+                                Username not entered. Please log out and enter your name.
                             </div>
                         </div>
                         <div class="settingsPunkt">
