@@ -13,8 +13,8 @@ $page = $_GET['page'] ?? 'login';
 </head>
 
 <body>
-    <?php if ($page === 'login'):?>
-        
+    <?php if ($page === 'login'): ?>
+
 
         <div class="container">
             <div class="logincontainer">
@@ -50,7 +50,7 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
             </div>
-           
+
         </div>
 
 
@@ -107,7 +107,7 @@ $page = $_GET['page'] ?? 'login';
                                 Resolution
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="settingsdivB">
                         <div class="settingsPunkt">
@@ -142,12 +142,22 @@ $page = $_GET['page'] ?? 'login';
                                 Resolution
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
                 <div class="settingsbuttons">
+                    <div class="settingsbutton">
+                        <div>
+                            Log out
+                        </div>
+                    </div>
 
+                    <div class="settingsbutton">
+                        <div onclick="GoBackWithRefresh();">
+                            Save & Exit
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,7 +167,11 @@ $page = $_GET['page'] ?? 'login';
     <?php endif; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    <?php if ($page === 'login'){echo '<script type="text/javascript">greetUser()</script>';}else{echo '<script type="text/javascript">setName()</script>';}  ?>
+    <?php if ($page === 'login') {
+        echo '<script type="text/javascript">greetUser()</script>';
+    } else {
+        echo '<script type="text/javascript">setName()</script>';
+    } ?>
 </body>
 
 </html>
