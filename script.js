@@ -12,6 +12,7 @@ function greetUser() {
         const userName = localStorage.getItem("userName");
         UI.usernameContainer.remove();
         UI.loginButton.innerHTML = "Logging in...";
+        UI.loginButton.disabled = true;
         typeSentence(userName);
     }else {
         return;
