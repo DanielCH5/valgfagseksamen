@@ -1,3 +1,4 @@
+
 const UI = {
     nameInput: document.querySelector('.submit-name-input'),
     loginButton: document.querySelector('.login-btn'),
@@ -6,11 +7,19 @@ const UI = {
     indtastetUsername: document.querySelector('#indtastetUsername'),
 };
 
-function setUsername() {
+function greetUser() {
+    if (localStorage.getItem("userName")) {
+        const userName = localStorage.getItem("userName");
+        UI.usernameContainer.remove();
+        UI.loginButton.innerHTML = "Logging in...";
+        typeSentence(userName);
+    }else {
+        return;
+    }
+}
+function setUsername(){
     localStorage.setItem("userName", UI.nameInput.value);
-    UI.usernameContainer.remove();
-    UI.loginButton.innerHTML = "Logging in...";
-    typeSentence(localStorage.getItem("userName"));
+    greetUser();
 }
 
 async function typeSentence(sentence) {
@@ -23,7 +32,7 @@ async function typeSentence(sentence) {
     UI.inputCursor.style.display = "none";
 }
 
-function clearUsername(){
+function clearUsername() {
     localStorage.removeItem("userName");
 }
 
@@ -33,3 +42,4 @@ function waitFor(ms) {
 const Player = {
     name: localStorage.getItem("userName"),
 };
+greetUser();
