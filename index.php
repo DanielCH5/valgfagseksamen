@@ -40,14 +40,16 @@ $page = $_GET['page'] ?? 'login';
                 </div>
 
                 <div class="settings">
-                    <div class="menuItem" onclick="clearUsername()">
-                        <div class="menuItemKey">
-                            Esc
+                    <a href="?page=settings">
+                        <div class="menuItem">
+                            <div class="menuItemKey">
+                                Esc
+                            </div>
+                            <div class="menuPic">
+                                <img src="gear.svg" width="40px" alt="Settings">
+                            </div>
                         </div>
-                        <div class="menuPic">
-                            <img src="gear.svg" width="40px" alt="Settings">
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -80,7 +82,7 @@ $page = $_GET['page'] ?? 'login';
                                 Username
                             </div>
                             <div class="indtastetUsername">
-                                Resolution
+                                Username has not been entered yet.
                             </div>
                         </div>
                         <div class="settingsPunkt">
@@ -148,14 +150,14 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="settingsbuttons">
                     <div class="settingsbutton">
-                        <div>
+                        <div onclick="logOut();">
                             Log out
                         </div>
                     </div>
 
                     <div class="settingsbutton">
                         <div onclick="GoBackWithRefresh();">
-                            Save & Exit
+                            Exit
                         </div>
                     </div>
                 </div>
@@ -164,6 +166,54 @@ $page = $_GET['page'] ?? 'login';
 
 
 
+
+    <?php elseif ($page === 'game'): ?>
+        <div class="container">
+
+            <div class="gameContainer">
+                <div class="playerUI">
+
+                </div>
+                <div class="miniMap">
+
+                </div>
+
+                <div class="popUp">
+
+                </div>
+
+                <div class="characterMenu">
+
+                </div>
+
+                <div class="inventory">
+
+                </div>
+                <div class="menuOptionsA">
+                    <div class="menuItem">
+
+                    </div>
+                    <div class="menuItem">
+
+                    </div>
+                </div>
+                <div class="spellContainer">
+
+                </div>
+                <div class="menuOptionsB">
+                    <div class="menuItem">
+
+                    </div>
+                    <div class="menuItem">
+
+                    </div>
+                </div>
+                <div class="skillTree">
+
+                </div>
+            </div>
+
+        </div>
     <?php endif; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>

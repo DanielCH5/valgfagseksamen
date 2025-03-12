@@ -22,12 +22,13 @@ async function typeSentence(sentence) {
     }
     UI.inputCursor.style.display = "none";
     await waitFor(1000);
-    window.location.href = '/?page=settings';
+    window.location.href = '/?page=game';
 
 }
 
-function clearUsername() {
+function logOut() {
     localStorage.removeItem("userName");
+    window.location.href ='/?page=login';
 }
 
 function waitFor(ms) {
@@ -49,7 +50,12 @@ function greetUser() {
 }
 
 function setName(){
-    UI.indtastetUsername.textContent = Player.name;
+    if(!Player.name){
+        return;
+    } else{
+        UI.indtastetUsername.textContent = Player.name;
+
+    }
 }
 function GoBackWithRefresh(event) {
     if ('referrer' in document) {
