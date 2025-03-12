@@ -49,5 +49,5 @@ function greetUser() {
 }
 
 function setName(){
-    UI.indtastetUsername.textContent = Player.name
+    UI.indtastetUsername.textContent = Player.name;
 }

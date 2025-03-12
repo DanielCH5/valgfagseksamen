@@ -77,7 +77,7 @@ $page = $_GET['page'] ?? 'login';
                     <div class="settingsdivA">
                         <div class="settingsPunkt">
                             <div>
-                                Resolution
+                                Username
                             </div>
                             <div class="indtastetUsername">
                                 Resolution
