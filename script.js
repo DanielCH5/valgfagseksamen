@@ -19,7 +19,7 @@ class Items {
 class Helmet extends Items {
     constructor(name, ID, stamina) {
         super(name, ID);
-        this.type = 1;
+        this.type = 10;
         this.stamina = stamina;
     }
 
@@ -27,49 +27,50 @@ class Helmet extends Items {
 class Chest extends Items {
     constructor(name, ID, vitality) {
         super(name, ID);
-        this.type = 2;
+        this.type = 20;
         this.vitality = vitality;
     }
 }
 class Legs extends Items {
     constructor(name, ID, agility) {
         super(name, ID);
-        this.type = 3;
+        this.type = 30;
         this.agility = agility;
     }
 }
 class Boots extends Items {
     constructor(name, ID, agility) {
         super(name, ID);
-        this.type = 7;
+        this.type = 70;
         this.agility = agility;
     }
 }
 class Ring extends Items {
     constructor(name, ID, intellect) {
         super(name, ID);
-        this.type = 4;
+        this.type = 40;
         this.intelllect = intellect;
     }
 }
 class Staff extends Items {
     constructor(name, ID, spirit) {
         super(name, ID);
-        this.type = 5;
+        this.type = 50;
         this.spirit = spirit;
     }
 }
 class Sword extends Items {
     constructor(name, ID, strength) {
         super(name, ID);
-        this.type = 6;
+        this.type = 60;
         this.strength = strength;
     }
 }
-class Gun extends Sword {
+class Gun extends Items {
     constructor(name, ID, strength) {
         super(name, ID, strength);
-        this.type = 5;
+        this.type = 60;
+        this.strength = strength;
     }
 }
 
@@ -81,29 +82,54 @@ const magicRing = new Ring("Ring of Magic", 5, 2);
 const priestStaff = new Staff("Holy Staff", 6, 3);
 const ironSword = new Sword("Iron Sword", 7, 4);
 const bfGun = new Gun("BFG 9000", 8, 9000);
+const sfGun = new Gun("sFG 9000", 8, 1);
 const bfSword = new Sword("BF Sword", 9, 45);
-const equippedItems = {
-    helmet: ironHelmet,
-    chest: ironChest,
-    legs: ironLegs,
-    boots: ironBoots,
-    ring: magicRing,
-    main: ironSword,
-    secondary: priestStaff,
-}
+const equippedItems = [
+    ironHelmet,
+    ironChest,
+    ironLegs,
+    ironBoots,
+    magicRing,
+    ironSword,
+    priestStaff,
+]
 const inventoryItems = [bfGun, bfSword]
 
 
 const Player = {
     name: localStorage.getItem("userName"),
     stats: {
-        strength: 10 + equippedItems.main.strength,
-        intellect: 10 + equippedItems.ring.intelllect,
-        vitality: 10 + equippedItems.chest.vitality,
-        stamina: 10 + equippedItems.helmet.stamina,
-        agility: 10 + equippedItems.legs.agility + equippedItems.boots.agility,
-        spirit: 10 + equippedItems.secondary.spirit,
+        strength: 10 + equippedItems[5].strength,
+        intellect: 10 + equippedItems[4].intelllect,
+        vitality: 10 + equippedItems[1].vitality,
+        stamina: 10 + equippedItems[0].stamina,
+        agility: 10 + equippedItems[2].agility + equippedItems[3].agility,
+        spirit: 10 + equippedItems[6].spirit,
     },
+
+    equipItem(item) {
+        const inventoryItem = item;
+        const equipmentItem = equippedItems.find(({ type }) => type === inventoryItem.type);
+        const iIndex = inventoryItems.indexOf(inventoryItem);
+        const eIndex = equippedItems.indexOf(equipmentItem);
+        if (inventoryItem.type === equipmentItem.type) {
+            equippedItems.splice(eIndex, 1, inventoryItem);
+            inventoryItems.splice(iIndex, 1, equipmentItem);
+        };
+        this.updateStats();
+        console.log(equippedItems, inventoryItems, Player.stats);
+
+
+    },
+
+    updateStats() {
+        this.stats.strength = 10 + equippedItems[5].strength;
+        this.stats.intellect = 10 + equippedItems[4].intelllect;
+            this.stats.vitality = 10 + equippedItems[1].vitality;
+            this.stats.stamina = 10 + equippedItems[0].stamina;
+            this.stats.agility = 10 + equippedItems[2].agility + equippedItems[3].agility;
+            this.stats.spirit = 10 + equippedItems[6].spirit;
+    }
 
 
 
