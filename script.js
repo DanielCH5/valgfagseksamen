@@ -117,7 +117,7 @@ const Player = {
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
         this.updateStats();
-        console.log(equippedItems, inventoryItems, Player.stats);
+        return Player.stats;
 
 
     },
