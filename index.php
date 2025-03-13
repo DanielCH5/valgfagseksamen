@@ -43,7 +43,7 @@ $page = $_GET['page'] ?? 'login';
                     <a href="?page=settings">
                         <div class="menuItem">
                             <div class="menuItemKey">
-                                Esc
+                                
                             </div>
                             <div class="menuPic">
                                 <img src="gear.svg" width="40px" alt="Settings">
@@ -191,10 +191,10 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="menuOptionsA">
                     <div class="menuItem">
-
+                    C
                     </div>
                     <div class="menuItem">
-
+                    T
                     </div>
                 </div>
                 <div class="spellContainer">
@@ -205,7 +205,7 @@ $page = $_GET['page'] ?? 'login';
                         <a href="?page=settings">
                             <div class="menuItem">
                                 <div class="menuItemKey">
-                                    Esc
+                                    
                                 </div>
                                 <div class="menuPic">
                                     <img src="gear.svg" width="40px" alt="Settings">
@@ -213,8 +213,8 @@ $page = $_GET['page'] ?? 'login';
                             </div>
                         </a>
                     </div>
-                    <div class="menuItem">
-
+                    <div class="menuItem" onclick="openBags()">
+                        B
                     </div>
                 </div>
                 <div class="skillTree">

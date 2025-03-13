@@ -5,10 +5,14 @@ const UI = {
     usernameContainer: document.querySelector('.username'),
     inputCursor: document.querySelector('.inputCursor'),
     indtastetUsername: document.querySelector('.indtastetUsername'),
+    inventory: document.querySelector('.inventory'),
+    skillTree: document.querySelector('.skillTree'),
+    characterMenu: document.querySelector('.characterMenu'),
+    playerUI: document.querySelector('.playerUI'),
 };
 
 
-function setUsername(){
+function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
 }
@@ -28,7 +32,7 @@ async function typeSentence(sentence) {
 
 function logOut() {
     localStorage.removeItem("userName");
-    window.location.href ='/?page=login';
+    window.location.href = '/?page=login';
 }
 
 function waitFor(ms) {
@@ -44,15 +48,15 @@ function greetUser() {
         UI.loginButton.innerHTML = "Logging in...";
         UI.loginButton.disabled = true;
         typeSentence(userName);
-    }else {
+    } else {
         return;
     }
 }
 
-function setName(){
-    if(!Player.name){
+function setName() {
+    if (!Player.name) {
         return;
-    } else{
+    } else {
         UI.indtastetUsername.textContent = Player.name;
 
     }
@@ -66,3 +70,43 @@ function GoBackWithRefresh(event) {
         window.history.back();
     }
 }
+
+function openBags() {
+    const bagVisibility = UI.inventory.style.display;
+    if (bagVisibility === "" || bagVisibility === "none") {
+        UI.inventory.style.display = "block";
+    } else {
+        UI.inventory.style.display = "none";
+    }
+}
+function openTree() {
+    const treeVisibility = UI.skillTree.style.display;
+    if (treeVisibility === "" || treeVisibility === "none") {
+        UI.skillTree.style.display = "block";
+        UI.characterMenu.style.display ="none";
+    } else {
+        UI.skillTree.style.display = "none";
+    }
+}
+function openCharacter() {
+    const characterVisibility = UI.characterMenu.style.display;
+    if (characterVisibility === "" || characterVisibility === "none") {
+        UI.characterMenu.style.display = "block";
+        UI.skillTree.style.display = "none";
+    } else {
+        UI.characterMenu.style.display = "none";
+    }
+}
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === "b" || event.key === "B") {
+        openBags();
+    }
+    if (event.key === "c" || event.key === "C") {
+        openCharacter();
+    }
+    if (event.key === "t" || event.key === "T") {
+        openTree();
+    }
+    
+})
