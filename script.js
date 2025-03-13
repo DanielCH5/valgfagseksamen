@@ -10,101 +10,66 @@ const UI = {
     characterMenu: document.querySelector('.characterMenu'),
     playerUI: document.querySelector('.playerUI'),
 };
-
-// const Items = [
-//     {
-//         name: "Iron Helmet",
-//         ID: 1,
-//         type: 1,
-//         vitality: 1,
-//         stamina: 1,
-//     },
-//     {
-//         name: "Iron Chest",
-//         ID: 2,
-//         type: 2,
-//         vitality: 2,
-//         strength: 2,
-//         stamina: 2,
-//     },
-//     {
-//         name: "Iron Leggings",
-//         ID: 3,
-//         type: 3,
-//         vitality: 2,
-//         strength: 1,
-//         stamina: 3,
-//         spirit: 2,
-//     },
-//     {
-//         name: "Iron Boots",
-//         ID: 4,
-//         type: 4,
-//         vitality: 2,
-//         stamina: 2,
-
-//     }
-// ]
 class Items {
-    constructor(name, ID){
+    constructor(name, ID) {
         this.name = name;
         this.ID = ID;
     }
 }
-class Helmet extends Items{ 
-    constructor(name, ID, stamina){
+class Helmet extends Items {
+    constructor(name, ID, stamina) {
         super(name, ID);
         this.type = 1;
         this.stamina = stamina;
     }
 
 }
-class Chest extends Items{ 
-    constructor(name, ID, vitality){
+class Chest extends Items {
+    constructor(name, ID, vitality) {
         super(name, ID);
         this.type = 2;
         this.vitality = vitality;
     }
 }
-class Legs extends Items{ 
-    constructor(name, ID, agility){
+class Legs extends Items {
+    constructor(name, ID, agility) {
         super(name, ID);
         this.type = 3;
         this.agility = agility;
     }
 }
-class Boots extends Items{ 
-    constructor(name, ID, agility){
+class Boots extends Items {
+    constructor(name, ID, agility) {
         super(name, ID);
         this.type = 7;
         this.agility = agility;
     }
 }
-class Ring extends Items{ 
-    constructor(name, ID, intellect){
+class Ring extends Items {
+    constructor(name, ID, intellect) {
         super(name, ID);
         this.type = 4;
         this.intelllect = intellect;
     }
 }
-class Staff extends Items{ 
-    constructor(name, ID, spirit){
+class Staff extends Items {
+    constructor(name, ID, spirit) {
         super(name, ID);
         this.type = 5;
         this.spirit = spirit;
     }
 }
-class Sword extends Items{ 
-    constructor(name, ID, strength){
+class Sword extends Items {
+    constructor(name, ID, strength) {
         super(name, ID);
         this.type = 6;
         this.strength = strength;
     }
 }
-class Gun extends Sword{
-    constructor(name, ID, strength){
+class Gun extends Sword {
+    constructor(name, ID, strength) {
         super(name, ID, strength);
-        this.type = 6;
+        this.type = 5;
     }
 }
 
@@ -116,10 +81,33 @@ const magicRing = new Ring("Ring of Magic", 5, 2);
 const priestStaff = new Staff("Holy Staff", 6, 3);
 const ironSword = new Sword("Iron Sword", 7, 4);
 const bfGun = new Gun("BFG 9000", 8, 9000);
+const bfSword = new Sword("BF Sword", 9, 45);
+const equippedItems = {
+    helmet: ironHelmet,
+    chest: ironChest,
+    legs: ironLegs,
+    boots: ironBoots,
+    ring: magicRing,
+    main: ironSword,
+    secondary: priestStaff,
+}
+
 
 const Player = {
     name: localStorage.getItem("userName"),
+    stats: {
+        strength: 10 + equippedItems.main.strength,
+        intellect: 10 + equippedItems.ring.intelllect,
+        vitality: 10 + equippedItems.chest.vitality,
+        stamina: 10 + equippedItems.helmet.stamina,
+        agility: 10 + equippedItems.legs.agility + equippedItems.boots.agility,
+        spirit: 10 + equippedItems.secondary.spirit,
+    },
+
+
+
 };
+
 function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
