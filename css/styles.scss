@@ -274,9 +274,10 @@ input::placeholder {
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 20% 60% 20%;
+	grid-template-rows: 20% 10% 50% 20%;
 	grid-template-areas: 
-	"a a a a a a . . . . c c"
+	"a a a a a a . . . c c c"
+	". . . d d d d d d c c c"
 	"i i i d d d d d d e e e"
 	"f f g g g g g g g g h h"
 	;
@@ -285,14 +286,57 @@ input::placeholder {
 .playerUI{
 	background-color: green;
 	grid-area: a;
-	width: 100%;
-	height: 100%;
+	display: grid;
+	grid-template-columns: 2fr 4fr;	
+	color: white;
 }
+.playerIcon{
+	background-color: orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.playerIcon div {
+	background-color: red;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+.playerBars{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3,1fr);
+	grid-template-areas: 
+	"a a a a"
+	"b b b b"
+	"c c c c";
+	gap: 10px;
+	padding: 10px;
+}
+#playerName{
+	grid-area: a;
+}
+.playerHP{
+	grid-area: b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: red;
+	border-radius: 16px;
+}
+.playerMana{
+	grid-area: c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: blue;
+	
+	border-radius: 16px;
+}
+
 .miniMap{
 	background-color: red;
 	grid-area: c;
-	width: 100%;
-	height: 100%;
 }
 .popUp{
 	background-color: orange;
@@ -312,8 +356,27 @@ input::placeholder {
 .inventory{
 	background-color: yellow;
 	grid-area: e;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"a b c"
+	"d e f"
+	"g h i";
+	gap: 5px;
+	border: solid 1px black;
+	padding: 10px;
 	display: none;
 }
+
+.inventoryslotA{background-color: blue; grid-area: a; }
+.inventoryslotB{background-color: grey; grid-area: b; }
+.inventoryslotC{background-color: grey; grid-area: c; }
+.inventoryslotD{background-color: grey; grid-area: d; }
+.inventoryslotE{background-color: grey; grid-area: e; }
+.inventoryslotF{background-color: grey; grid-area: f; }
+.inventoryslotG{background-color: grey; grid-area: g; }
+.inventoryslotH{background-color: grey; grid-area: h; }
+.inventoryslotI{background-color: grey; grid-area: i; }
 .menuOptionsA{
 	background-color: aqua;
 	grid-area:f;

@@ -74,7 +74,7 @@ function GoBackWithRefresh(event) {
 function openBags() {
     const bagVisibility = UI.inventory.style.display;
     if (bagVisibility === "" || bagVisibility === "none") {
-        UI.inventory.style.display = "block";
+        UI.inventory.style.display = "grid";
     } else {
         UI.inventory.style.display = "none";
     }

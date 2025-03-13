@@ -172,7 +172,22 @@ $page = $_GET['page'] ?? 'login';
 
             <div class="gameContainer">
                 <div class="playerUI">
+                    <div class="playerIcon">
+                        <div>
 
+                        </div>
+                    </div>
+                    <div class="playerBars">
+                        <div id="playerName" class="indtastetUsername">
+
+                        </div>
+                        <div class="playerHP">
+                        10,000/10,000
+                        </div>
+                        <div class="playerMana">
+                        5,000/5,000
+                        </div>
+                    </div>
                 </div>
                 <div class="miniMap">
 
@@ -187,7 +202,33 @@ $page = $_GET['page'] ?? 'login';
                 </div>
 
                 <div class="inventory">
+                    <div class="inventoryslotA">
 
+                    </div>
+                    <div class="inventoryslotB">
+
+                    </div>
+                    <div class="inventoryslotC">
+
+                    </div>
+                    <div class="inventoryslotD">
+
+                    </div>
+                    <div class="inventoryslotE">
+
+                    </div>
+                    <div class="inventoryslotF">
+
+                    </div>
+                    <div class="inventoryslotG">
+
+                    </div>
+                    <div class="inventoryslotH">
+
+                    </div>
+                    <div class="inventoryslotI">
+
+                    </div>
                 </div>
                 <div class="menuOptionsA">
                     <div class="menuItem">
