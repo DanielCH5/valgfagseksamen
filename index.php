@@ -157,7 +157,7 @@ $page = $_GET['page'] ?? 'login';
 
                     <div class="settingsbutton">
                         <div onclick="GoBackWithRefresh();">
-                            Exit
+                            Back
                         </div>
                     </div>
                 </div>

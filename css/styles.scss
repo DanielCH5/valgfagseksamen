@@ -359,25 +359,21 @@ input::placeholder {
 	grid-area: e;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-areas: 
-	"a b c"
-	"d e f"
-	"g h i";
 	gap: 5px;
 	border: solid 1px black;
 	padding: 10px;
 	display: none;
 }
 
-.inventoryslotA{background-color: blue; grid-area: a; }
-.inventoryslotB{background-color: grey; grid-area: b; }
-.inventoryslotC{background-color: grey; grid-area: c; }
-.inventoryslotD{background-color: grey; grid-area: d; }
-.inventoryslotE{background-color: grey; grid-area: e; }
-.inventoryslotF{background-color: grey; grid-area: f; }
-.inventoryslotG{background-color: grey; grid-area: g; }
-.inventoryslotH{background-color: grey; grid-area: h; }
-.inventoryslotI{background-color: grey; grid-area: i; }
+.inventoryslotA{background-color: blue; }
+.inventoryslotB{background-color: grey; }
+.inventoryslotC{background-color: grey; }
+.inventoryslotD{background-color: grey; }
+.inventoryslotE{background-color: grey; }
+.inventoryslotF{background-color: grey; }
+.inventoryslotG{background-color: grey; }
+.inventoryslotH{background-color: grey; }
+.inventoryslotI{background-color: grey; }
 .menuOptionsA{
 	background-color: aqua;
 	grid-area:f;
