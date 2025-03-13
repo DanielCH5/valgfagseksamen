@@ -119,8 +119,8 @@ input::placeholder {
 
 .menuItem {
 	background-color: grey;
-	width: 80px;
-	height: 80px;
+	width: 50px;
+	height: 50px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
@@ -378,7 +378,8 @@ input::placeholder {
 	background-color: aqua;
 	grid-area:f;
 	display: flex;
-	align-items: center;
+	align-items: end;
+	padding-bottom: 10px;
 	justify-content: space-evenly;
 }
 .spellContainer{
@@ -390,6 +391,7 @@ input::placeholder {
 	background-color: brown;
 	grid-area: h;
 	display: flex;
-	align-items: center;
+	align-items: end;
+	padding-bottom: 10px;
 	justify-content: space-evenly;
 }
