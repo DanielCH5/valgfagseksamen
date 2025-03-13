@@ -91,6 +91,7 @@ const equippedItems = {
     main: ironSword,
     secondary: priestStaff,
 }
+const inventoryItems = [bfGun, bfSword]
 
 
 const Player = {
