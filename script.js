@@ -14,13 +14,21 @@ class Items {
     constructor(name, ID) {
         this.name = name;
         this.ID = ID;
+        this.stats = {
+            stamina: 0,
+            vitality: 0,
+            strength: 0,
+            agility: 0,
+            spirit: 0,
+            intellect: 0,
+        }
     }
 }
 class Helmet extends Items {
     constructor(name, ID, stamina) {
         super(name, ID);
         this.type = 10;
-        this.stamina = stamina;
+        this.stats.stamina = this.stats.stamina + stamina;
     }
 
 }
@@ -28,49 +36,49 @@ class Chest extends Items {
     constructor(name, ID, vitality) {
         super(name, ID);
         this.type = 20;
-        this.vitality = vitality;
+        this.stats.vitality = this.stats.vitality + vitality;
     }
 }
 class Legs extends Items {
     constructor(name, ID, agility) {
         super(name, ID);
         this.type = 30;
-        this.agility = agility;
+        this.stats.agility = this.stats.agility + agility;
     }
 }
 class Boots extends Items {
     constructor(name, ID, agility) {
         super(name, ID);
         this.type = 70;
-        this.agility = agility;
+        this.stats.agility = this.stats.agility + agility;
     }
 }
 class Ring extends Items {
     constructor(name, ID, intellect) {
         super(name, ID);
         this.type = 40;
-        this.intelllect = intellect;
+        this.stats.intellect = this.stats.intellect + intellect;
     }
 }
 class Staff extends Items {
     constructor(name, ID, spirit) {
         super(name, ID);
         this.type = 50;
-        this.spirit = spirit;
+        this.stats.spirit = this.stats.spirit + spirit;
     }
 }
 class Sword extends Items {
     constructor(name, ID, strength) {
         super(name, ID);
         this.type = 60;
-        this.strength = strength;
+        this.stats.strength = strength + this.stats.strength;
     }
 }
 class Gun extends Items {
     constructor(name, ID, strength) {
         super(name, ID, strength);
         this.type = 60;
-        this.strength = strength;
+        this.stats.strength = strength + this.stats.strength;
     }
 }
 
@@ -93,18 +101,20 @@ const equippedItems = [
     ironSword,
     priestStaff,
 ]
-const inventoryItems = [bfGun, bfSword]
+
+
+const inventoryItems = [bfGun, bfSword, sfGun]
 
 
 const Player = {
     name: localStorage.getItem("userName"),
     stats: {
-        strength: 10 + equippedItems[5].strength,
-        intellect: 10 + equippedItems[4].intelllect,
-        vitality: 10 + equippedItems[1].vitality,
-        stamina: 10 + equippedItems[0].stamina,
-        agility: 10 + equippedItems[2].agility + equippedItems[3].agility,
-        spirit: 10 + equippedItems[6].spirit,
+        strength: 10,
+        intellect: 10,
+        vitality: 10,
+        stamina: 10,
+        agility: 10,
+        spirit: 10,
     },
 
     equipItem(item) {
@@ -117,24 +127,35 @@ const Player = {
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
         this.updateStats();
+
         return Player.stats;
 
 
     },
 
     updateStats() {
-        this.stats.strength = 10 + equippedItems[5].strength;
-        this.stats.intellect = 10 + equippedItems[4].intelllect;
-            this.stats.vitality = 10 + equippedItems[1].vitality;
-            this.stats.stamina = 10 + equippedItems[0].stamina;
-            this.stats.agility = 10 + equippedItems[2].agility + equippedItems[3].agility;
-            this.stats.spirit = 10 + equippedItems[6].spirit;
+        //Reset til basestats
+        Player.stats = {
+            strength: 10,
+            intellect: 10,
+            vitality: 10,
+            stamina: 10,
+            agility: 10,
+            spirit: 10,
+        };
+        equippedItems.forEach(item => {
+            // Iterate through all stats of the item and update the Player's stats
+            for (const stat in item.stats) {
+                if (Player.stats.hasOwnProperty(stat)) {
+                    Player.stats[stat] += item.stats[stat];
+                }
+            }
+        });
     }
 
 
 
 };
-
 function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
@@ -181,12 +202,12 @@ function setName() {
         UI.indtastetUsername.textContent = Player.name;
 
     }
+    Player.updateStats();
+
 }
 function GoBackWithRefresh(event) {
     if ('referrer' in document) {
         window.location = document.referrer;
-        /* OR */
-        //location.replace(document.referrer);
     } else {
         window.history.back();
     }
