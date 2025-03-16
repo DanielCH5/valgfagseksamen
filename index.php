@@ -238,7 +238,7 @@ $page = $_GET['page'] ?? 'login';
 
                         <div class="stat">
                             <div class="statName">
-
+                                Strength: 
                             </div>
                             <div class="statNumber1">
 
@@ -246,7 +246,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                         <div class="stat">
                             <div class="statName">
-
+                                Intellect: 
                             </div>
                             <div class="statNumber2">
 
@@ -254,7 +254,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                         <div class="stat">
                             <div class="statName">
-
+                                Vitality:
                             </div>
                             <div class="statNumber3">
 
@@ -262,7 +262,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                         <div class="stat">
                             <div class="statName">
-
+                                Stamina: 
                             </div>
                             <div class="statNumber4">
 
@@ -270,7 +270,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                         <div class="stat">
                             <div class="statName">
-
+                                Agility: 
                             </div>
                             <div class="statNumber5">
 
@@ -278,7 +278,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                         <div class="stat">
                             <div class="statName">
-
+                                Spirit:  
                             </div>
                             <div class="statNumber6">
 

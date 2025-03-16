@@ -461,6 +461,7 @@ input::placeholder {
 		"b . c"
 		"d . e"
 		"f . g"
+		". . ."
 	;
 	padding-top: 0;
 }
@@ -527,5 +528,13 @@ input::placeholder {
 .stat {
 	grid-column: 1 / span 3;
 	background-color: white;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.stat div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
