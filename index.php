@@ -231,7 +231,7 @@ $page = $_GET['page'] ?? 'login';
 
                             </div>
                             <div id="characterUsername" class="indtastetUsername">
-                        
+
                             </div>
                         </div>
 
@@ -240,7 +240,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber1">
 
                             </div>
                         </div>
@@ -248,7 +248,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber2">
 
                             </div>
                         </div>
@@ -256,7 +256,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber3">
 
                             </div>
                         </div>
@@ -264,7 +264,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber4">
 
                             </div>
                         </div>
@@ -272,7 +272,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber5">
 
                             </div>
                         </div>
@@ -280,7 +280,7 @@ $page = $_GET['page'] ?? 'login';
                             <div class="statName">
 
                             </div>
-                            <div class="statNumber">
+                            <div class="statNumber6">
 
                             </div>
                         </div>

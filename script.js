@@ -9,6 +9,12 @@ const UI = {
     skillTree: document.querySelector('.skillTree'),
     characterMenu: document.querySelector('.characterMenu'),
     playerUI: document.querySelector('.playerUI'),
+    playerStrength: document.querySelector('.statNumber1'),
+    playerIntellect: document.querySelector('.statNumber2'),
+    playerVitality: document.querySelector('.statNumber3'),
+    playerStamina: document.querySelector('.statNumber4'),
+    playerAgility: document.querySelector('.statNumber5'),
+    playerSpirit: document.querySelector('.statNumber6'),
 };
 class Items {
     constructor(name, ID) {
@@ -151,6 +157,13 @@ const Player = {
                 }
             }
         });
+        UI.playerStrength.textContent += Player.stats.strength;
+        UI.playerIntellect.textContent += Player.stats.intellect;
+        UI.playerVitality.textContent += Player.stats.vitality;
+        UI.playerStamina.textContent += Player.stats.stamina;
+        UI.playerAgility.textContent += Player.stats.agility;
+        UI.playerSpirit.textContent += Player.stats.spirit;
+
     }
 
 
@@ -196,22 +209,14 @@ function greetUser() {
         return;
     }
 }
-function setName(){
-    
-
+function setName() {
     UI.indtastetUsername.forEach((userName) => {
         userName.textContent += Player.name
     });
-}
-function setNameAgain() {
-    if (!Player.name) {
-        return;
-    } else {
-      setName();
-    }
-    Player.updateStats();
+    Player.updateStats(); //and stats
 
 }
+
 function GoBackWithRefresh(event) {
     if ('referrer' in document) {
         window.location = document.referrer;
