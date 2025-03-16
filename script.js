@@ -210,8 +210,11 @@ function greetUser() {
     }
 }
 function setName() {
+    if(!Player.name){
+        return;
+    }
     UI.indtastetUsername.forEach((userName) => {
-        userName.textContent += Player.name
+        userName.textContent = Player.name
     });
     Player.updateStats(); //and stats
 
