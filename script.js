@@ -224,7 +224,7 @@ function openBags() {
 function openTree() {
     const treeVisibility = UI.skillTree.style.display;
     if (treeVisibility === "" || treeVisibility === "none") {
-        UI.skillTree.style.display = "block";
+        UI.skillTree.style.display = "grid";
         UI.characterMenu.style.display = "none";
     } else {
         UI.skillTree.style.display = "none";
@@ -233,7 +233,7 @@ function openTree() {
 function openCharacter() {
     const characterVisibility = UI.characterMenu.style.display;
     if (characterVisibility === "" || characterVisibility === "none") {
-        UI.characterMenu.style.display = "block";
+        UI.characterMenu.style.display = "grid";
         UI.skillTree.style.display = "none";
     } else {
         UI.characterMenu.style.display = "none";

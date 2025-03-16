@@ -395,3 +395,61 @@ input::placeholder {
 	padding-bottom: 10px;
 	justify-content: space-evenly;
 }
+
+.characterMenu {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.characterItems{
+	background-color: white;
+
+	display: grid;
+
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+
+	grid-template-areas: 
+	". a ."
+	"b . c"
+	"d . e"
+	"f . g"
+	;
+}
+
+#playerHead{
+	grid-area: a;
+}
+
+#playerChest{
+	grid-area: c;
+}
+
+#playerLegs {
+	grid-area: e;
+}
+
+#playerBoots{
+	grid-area: g;
+}
+
+#playerRing{
+	grid-area: f;
+}
+
+#playerPrimary{
+	grid-area: b;
+}
+
+#playerSecondary{
+	grid-area: d;
+}
+
+.characterItems div {
+	background-color: grey;
+	margin: 10px;
+}
+
+.characterStats{
+	background-color: black;
+}

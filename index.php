@@ -43,7 +43,7 @@ $page = $_GET['page'] ?? 'login';
                     <a href="?page=settings">
                         <div class="menuItem">
                             <div class="menuItemKey">
-                                
+
                             </div>
                             <div class="menuPic">
                                 <img src="gear.svg" width="40px" alt="Settings">
@@ -182,10 +182,10 @@ $page = $_GET['page'] ?? 'login';
 
                         </div>
                         <div class="playerHP">
-                        10,000/10,000
+                            10,000/10,000
                         </div>
                         <div class="playerMana">
-                        5,000/5,000
+                            5,000/5,000
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,32 @@ $page = $_GET['page'] ?? 'login';
                 </div>
 
                 <div class="characterMenu">
+                    <div class="characterItems">
+                        <div id="playerHead">
 
+                        </div>
+                        <div id="playerChest">
+
+                        </div>
+                        <div id="playerLegs">
+
+                        </div>
+                        <div id="playerBoots">
+
+                        </div>
+                        <div id="playerRing">
+
+                        </div>
+                        <div id="playerPrimary">
+
+                        </div>
+                        <div id="playerSecondary">
+
+                        </div>
+                    </div>
+                    <div class="characterStats">
+
+                    </div>
                 </div>
 
                 <div class="inventory">
@@ -232,10 +257,10 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="menuOptionsA">
                     <div class="menuItem">
-                    C
+                        C
                     </div>
                     <div class="menuItem">
-                    T
+                        T
                     </div>
                 </div>
                 <div class="spellContainer">
@@ -246,7 +271,7 @@ $page = $_GET['page'] ?? 'login';
                         <a href="?page=settings">
                             <div class="menuItem">
                                 <div class="menuItemKey">
-                                    
+
                                 </div>
                                 <div class="menuPic">
                                     <img src="gear.svg" width="40px" alt="Settings">
