@@ -157,12 +157,12 @@ const Player = {
                 }
             }
         });
-        UI.playerStrength.textContent += Player.stats.strength;
-        UI.playerIntellect.textContent += Player.stats.intellect;
-        UI.playerVitality.textContent += Player.stats.vitality;
-        UI.playerStamina.textContent += Player.stats.stamina;
-        UI.playerAgility.textContent += Player.stats.agility;
-        UI.playerSpirit.textContent += Player.stats.spirit;
+        UI.playerStrength.textContent = Player.stats.strength;
+        UI.playerIntellect.textContent = Player.stats.intellect;
+        UI.playerVitality.textContent = Player.stats.vitality;
+        UI.playerStamina.textContent = Player.stats.stamina;
+        UI.playerAgility.textContent = Player.stats.agility;
+        UI.playerSpirit.textContent = Player.stats.spirit;
 
     }
 
