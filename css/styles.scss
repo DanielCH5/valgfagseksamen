@@ -100,7 +100,8 @@ input {
 	width: 100%;
 	height: 60px;
 }
-.login-btn:disabled{
+
+.login-btn:disabled {
 	background-color: black;
 	color: white;
 }
@@ -218,19 +219,21 @@ input::placeholder {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	grid-template-areas: 
-	"a a a a a a a a a a a a"
-	"b b b b b b b b b b b b";
+	grid-template-areas:
+		"a a a a a a a a a a a a"
+		"b b b b b b b b b b b b";
 	gap: 20px;
 }
-.settingsdivA{
+
+.settingsdivA {
 	background-color: aqua;
 	grid-area: a;
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr;	
+	grid-template-rows: 2fr 1fr 1fr 1fr;
 	gap: 20px;
 }
-.settingsdivB{
+
+.settingsdivB {
 	background-color: red;
 	grid-area: b;
 	display: grid;
@@ -242,11 +245,12 @@ input::placeholder {
 
 .settingsPunkt {
 	background-color: yellow;
-	display:grid;
+	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap:20px;
+	gap: 20px;
 }
-.settingsPunkt div{
+
+.settingsPunkt div {
 	background-color: green;
 	display: flex;
 	justify-content: center;
@@ -262,7 +266,8 @@ input::placeholder {
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
 }
-.settingsbutton{
+
+.settingsbutton {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -275,49 +280,55 @@ input::placeholder {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: 20% 10% 50% 20%;
-	grid-template-areas: 
-	"a a a a a a . . . c c c"
-	". . . d d d d d d c c c"
-	"i i i d d d d d d e e e"
-	"f f g g g g g g g g h h"
+	grid-template-areas:
+		"a a a a a a . . . c c c"
+		". . . d d d d d d c c c"
+		"i i i d d d d d d e e e"
+		"f f g g g g g g g g h h"
 	;
 	column-gap: 20px;
 }
-.playerUI{
+
+.playerUI {
 	background-color: green;
 	grid-area: a;
 	display: grid;
-	grid-template-columns: 2fr 4fr;	
+	grid-template-columns: 2fr 4fr;
 	color: white;
 	gap: 20px;
 }
-.playerIcon{
+
+.playerIcon {
 	background-color: orange;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .playerIcon div {
 	background-color: red;
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
 }
-.playerBars{
+
+.playerBars {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(3,1fr);
-	grid-template-areas: 
-	"a a a a"
-	"b b b b"
-	"c c c c";
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"a a a a"
+		"b b b b"
+		"c c c c";
 	gap: 10px;
 	padding: 10px;
 }
-#playerName{
+
+#playerName {
 	grid-area: a;
 }
-.playerHP{
+
+.playerHP {
 	grid-area: b;
 	display: flex;
 	justify-content: center;
@@ -325,36 +336,41 @@ input::placeholder {
 	background-color: red;
 	border-radius: 16px;
 }
-.playerMana{
+
+.playerMana {
 	grid-area: c;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: blue;
-	
+
 	border-radius: 16px;
 }
 
-.miniMap{
+.miniMap {
 	background-color: red;
 	grid-area: c;
 }
-.popUp{
+
+.popUp {
 	background-color: orange;
 	grid-area: i;
 }
-.characterMenu{
+
+.characterMenu {
 	background-color: blue;
 	grid-area: d;
 	display: none;
 }
+
 .skillTree {
 	background-color: pink;
 	grid-area: d;
 	display: none;
-	
+
 }
-.inventory{
+
+.inventory {
 	background-color: yellow;
 	grid-area: e;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -365,29 +381,58 @@ input::placeholder {
 	display: none;
 }
 
-.inventoryslotA{background-color: blue; }
-.inventoryslotB{background-color: grey; }
-.inventoryslotC{background-color: grey; }
-.inventoryslotD{background-color: grey; }
-.inventoryslotE{background-color: grey; }
-.inventoryslotF{background-color: grey; }
-.inventoryslotG{background-color: grey; }
-.inventoryslotH{background-color: grey; }
-.inventoryslotI{background-color: grey; }
-.menuOptionsA{
+.inventoryslotA {
+	background-color: blue;
+}
+
+.inventoryslotB {
+	background-color: grey;
+}
+
+.inventoryslotC {
+	background-color: grey;
+}
+
+.inventoryslotD {
+	background-color: grey;
+}
+
+.inventoryslotE {
+	background-color: grey;
+}
+
+.inventoryslotF {
+	background-color: grey;
+}
+
+.inventoryslotG {
+	background-color: grey;
+}
+
+.inventoryslotH {
+	background-color: grey;
+}
+
+.inventoryslotI {
+	background-color: grey;
+}
+
+.menuOptionsA {
 	background-color: aqua;
-	grid-area:f;
+	grid-area: f;
 	display: flex;
 	align-items: end;
 	padding-bottom: 10px;
 	justify-content: space-evenly;
 }
-.spellContainer{
+
+.spellContainer {
 	background-color: white;
 	grid-area: g;
 
 }
-.menuOptionsB{
+
+.menuOptionsB {
 	background-color: brown;
 	grid-area: h;
 	display: flex;
@@ -397,31 +442,34 @@ input::placeholder {
 }
 
 .characterMenu {
-	display: grid;
+	display: none;
 	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	padding-left: 20px;
+	
 }
 
-.characterItems{
+.characterItems {
 	background-color: white;
-
 	display: grid;
-
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-
-	grid-template-areas: 
-	". a ."
-	"b . c"
-	"d . e"
-	"f . g"
+	grid-template-rows: repeat(6, 1fr);
+	gap: 20px;
+	grid-template-areas:
+		"h h h"
+		". a ."
+		"b . c"
+		"d . e"
+		"f . g"
 	;
+	padding-top: 0;
 }
 
-#playerHead{
+#playerHead {
 	grid-area: a;
 }
 
-#playerChest{
+#playerChest {
 	grid-area: c;
 }
 
@@ -429,27 +477,55 @@ input::placeholder {
 	grid-area: e;
 }
 
-#playerBoots{
+#playerBoots {
 	grid-area: g;
 }
 
-#playerRing{
+#playerRing {
 	grid-area: f;
 }
 
-#playerPrimary{
+#playerPrimary {
 	grid-area: b;
 }
 
-#playerSecondary{
+#playerSecondary {
 	grid-area: d;
 }
 
 .characterItems div {
 	background-color: grey;
-	margin: 10px;
+	height: 100%;
+	width: 100%;
 }
 
-.characterStats{
-	background-color: black;
+.characterStats {
+	background-color: orange;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+	gap: 20px;
+	grid-template-areas:
+		"a a a"
+		"b b b"
+		"c c c"
+		"d d d"
+		"e e e"
+		"f f f"
+		"g g g"
+		"h h h"
+	;
+	padding: 10px;
 }
+
+.characterUsernameIcon{
+	grid-area: b;
+	background-color: gray;
+}
+
+
+.stat {
+	grid-column: 1 / span 3;
+	background-color: white;
+}
+

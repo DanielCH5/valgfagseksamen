@@ -197,7 +197,7 @@ $page = $_GET['page'] ?? 'login';
 
                 </div>
 
-                <div class="characterMenu">
+                <div class="characterMenu" onload="setName()">
                     <div class="characterItems">
                         <div id="playerHead">
 
@@ -222,6 +222,68 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div class="characterStats">
+
+                        <div class="statsTop">
+
+                        </div>
+                        <div class="characterUsernameIcon">
+                            <div id="playerIcon">
+
+                            </div>
+                            <div id="characterUsername" class="indtastetUsername">
+                        
+                            </div>
+                        </div>
+
+
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statName">
+
+                            </div>
+                            <div class="statNumber">
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>

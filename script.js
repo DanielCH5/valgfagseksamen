@@ -4,7 +4,7 @@ const UI = {
     loginButton: document.querySelector('.login-btn'),
     usernameContainer: document.querySelector('.username'),
     inputCursor: document.querySelector('.inputCursor'),
-    indtastetUsername: document.querySelector('.indtastetUsername'),
+    indtastetUsername: document.querySelectorAll('.indtastetUsername'),
     inventory: document.querySelector('.inventory'),
     skillTree: document.querySelector('.skillTree'),
     characterMenu: document.querySelector('.characterMenu'),
@@ -166,7 +166,9 @@ async function typeSentence(sentence) {
     UI.inputCursor.style.display = "inline-block";
     for (let i = 0; i < letters.length; i++) {
         await waitFor(100);
-        UI.indtastetUsername.textContent += letters[i];
+        UI.indtastetUsername.forEach((userName) => {
+            userName.textContent += letters[i]
+        });
     }
     UI.inputCursor.style.display = "none";
     await waitFor(1000);
@@ -194,13 +196,18 @@ function greetUser() {
         return;
     }
 }
+function setName(){
+    
 
-function setName() {
+    UI.indtastetUsername.forEach((userName) => {
+        userName.textContent += Player.name
+    });
+}
+function setNameAgain() {
     if (!Player.name) {
         return;
     } else {
-        UI.indtastetUsername.textContent = Player.name;
-
+      setName();
     }
     Player.updateStats();
 
