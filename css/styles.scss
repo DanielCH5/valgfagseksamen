@@ -538,3 +538,20 @@ input::placeholder {
 	align-items: center;
 }
 
+.characterItems div{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.characterItems div img {
+	height: 30px;
+	width: 30px;
+}
+
+.inventory div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

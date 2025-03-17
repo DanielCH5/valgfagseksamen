@@ -97,8 +97,8 @@ const magicRing = new Ring("Ring of Magic", 5, 2);
 const priestStaff = new Staff("Holy Staff", 6, 3);
 const ironSword = new Sword("Iron Sword", 7, 4);
 const bfGun = new Gun("BFG 9000", 8, 9000);
-const sfGun = new Gun("sFG 9000", 8, 1);
 const bfSword = new Sword("BF Sword", 9, 45);
+const sfGun = new Gun("sFG 9000", 10, 1);
 const equippedItems = [
     ironHelmet,
     ironChest,
