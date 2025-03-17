@@ -290,7 +290,7 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="inventory">
                     <div class="inventoryslotA">
-
+                    
                     </div>
                     <div class="inventoryslotB">
 

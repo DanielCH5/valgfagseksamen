@@ -15,6 +15,7 @@ const UI = {
     playerStamina: document.querySelector('.statNumber4'),
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
+    inventorySlotA: document.querySelector('.inventoryslotA'),
 };
 class Items {
     constructor(name, ID) {
