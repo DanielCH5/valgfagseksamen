@@ -17,7 +17,7 @@ const UI = {
     playerSpirit: document.querySelector('.statNumber6'),
     popUp: document.querySelector('.popupWindow'),
 
-    async clearPopup(){
+    async clearPopup() {
         await waitFor(3000)
         this.popUp.innerHTML = "";
     }
@@ -104,7 +104,7 @@ const ironSword = new Sword("Iron Sword", 7, 4);
 const bfGun = new Gun("BFG 9000", 8, 9000);
 const bfSword = new Sword("BF Sword", 9, 45);
 const sfGun = new Gun("sFG 9000", 10, 1);
-const equippedItems = [
+let equippedItems = [
     ironHelmet,
     ironChest,
     ironLegs,
@@ -113,9 +113,7 @@ const equippedItems = [
     ironSword,
     priestStaff,
 ]
-
-
-const inventoryItems = [bfSword, sfGun, bfGun]
+let inventoryItems = [bfSword, sfGun, bfGun]
 
 document.querySelectorAll(".inventory div").forEach((slot, index) => {
     slot.addEventListener("click", () => {
@@ -124,6 +122,25 @@ document.querySelectorAll(".inventory div").forEach((slot, index) => {
         }
     });
 });
+
+function saveEquippedItems() {
+    localStorage.setItem("equippedItems", JSON.stringify(equippedItems));
+    localStorage.setItem("inventoryItems", JSON.stringify(inventoryItems));
+}
+function loadEquippedItems() {
+    const savedItems = localStorage.getItem("equippedItems");
+    const savedInventory = localStorage.getItem("inventoryItems");
+    if (savedItems) {
+        equippedItems = JSON.parse(savedItems);
+        Player.updateUI(); // Refresh UI with loaded items
+        Player.updateStats(); // Refresh stats
+    }
+    if(savedInventory) {
+        inventoryItems = JSON.parse(savedInventory);
+        Player.updateUI();
+        Player.updateStats();
+    }
+}
 const Player = {
     name: localStorage.getItem("userName"),
     stats: {
@@ -148,7 +165,8 @@ const Player = {
         UI.clearPopup();
         this.updateStats();
         this.updateUI();
-        return Player.stats;
+        saveEquippedItems();
+
 
 
 
@@ -192,14 +210,14 @@ const Player = {
             50: "playerSecondary",
             60: "playerPrimary",
         };
-    
+
         equippedItems.forEach(item => {
             const slotId = slots[item.type];
             if (slotId) {
                 document.querySelector(`#${slotId} img`).src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
             }
         });
-    
+
         // Update inventory items
         document.querySelectorAll(".inventory div").forEach((slot, index) => {
             const item = inventoryItems[index];
@@ -219,7 +237,7 @@ const Player = {
             }
         });
     }
-    
+
 
 };
 function setUsername() {
@@ -263,12 +281,13 @@ function greetUser() {
     }
 }
 function setName() {
-    if(!Player.name){
+    if (!Player.name) {
         return;
     }
     UI.indtastetUsername.forEach((userName) => {
         userName.textContent = Player.name
     });
+    loadEquippedItems();
     Player.updateStats(); //and stats
 
 }
