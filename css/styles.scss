@@ -296,6 +296,7 @@ input::placeholder {
 	grid-template-columns: 2fr 4fr;
 	color: white;
 	gap: 20px;
+	margin-bottom: 20px;
 }
 
 .playerIcon {
@@ -366,6 +367,7 @@ input::placeholder {
 .popUp {
 	background-color: orange;
 	grid-area: i;
+	
 }
 
 .characterMenu {

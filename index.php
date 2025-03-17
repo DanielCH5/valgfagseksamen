@@ -196,6 +196,9 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="popUp">
 
+                <div class="popupWindow">
+
+                </div>
                 </div>
 
                 <div class="characterMenu" onload="setName()">

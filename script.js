@@ -15,6 +15,12 @@ const UI = {
     playerStamina: document.querySelector('.statNumber4'),
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
+    popUp: document.querySelector('.popupWindow'),
+
+    async clearPopup(){
+        await waitFor(3000)
+        this.popUp.innerHTML = "";
+    }
 };
 class Items {
     constructor(name, ID) {
@@ -138,6 +144,8 @@ const Player = {
             equippedItems.splice(eIndex, 1, inventoryItem);
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
+        UI.popUp.innerHTML += `${id.name} has been equipped <br>`;
+        UI.clearPopup();
         this.updateStats();
         this.updateUI();
         return Player.stats;
