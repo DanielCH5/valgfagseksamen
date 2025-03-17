@@ -15,9 +15,6 @@ const UI = {
     playerStamina: document.querySelector('.statNumber4'),
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
-    inventorySlotA: document.querySelector('.inventoryslotA'),
-    inventorySlotB: document.querySelector('.inventoryslotB'),
-    inventorySlotC: document.querySelector('.inventoryslotC'),
 };
 class Items {
     constructor(name, ID) {
@@ -141,8 +138,6 @@ const Player = {
             equippedItems.splice(eIndex, 1, inventoryItem);
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
-
-
         this.updateStats();
         this.updateUI();
         return Player.stats;

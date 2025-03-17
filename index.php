@@ -199,7 +199,7 @@ $page = $_GET['page'] ?? 'login';
                 <div class="characterMenu" onload="setName()">
                     <div class="characterItems">
                         <div id="playerHead">
-                            <img src="ironhelmet.png" alt="" >
+                            <img src="ironhelmet.png" alt="">
                         </div>
                         <div id="playerChest">
                             <img src="ironchest.png" alt="">
@@ -217,7 +217,7 @@ $page = $_GET['page'] ?? 'login';
                             <img src="ironsword.png" alt="">
                         </div>
                         <div id="playerSecondary">
-                            <img src="holystaff.png"  alt="">
+                            <img src="holystaff.png" alt="">
                         </div>
                     </div>
                     <div class="characterStats">
@@ -318,30 +318,37 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="menuOptionsA">
                     <div class="menuItem">
-                        C
+                        <div class="menuPic">
+                            <img src="helmet.png" width="40px" alt="">
+                        </div>
                     </div>
                     <div class="menuItem">
-                        T
+                        <div class="menuPic">
+                            <img src="tome.png" width="40px" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="spellContainer">
 
                 </div>
                 <div class="menuOptionsB">
-                    <div class="menuItem">
-                        <a href="?page=settings">
-                            <div class="menuItem">
-                                <div class="menuItemKey">
 
-                                </div>
-                                <div class="menuPic">
-                                    <img src="gear.svg" width="40px" alt="Settings">
-                                </div>
+                    <a href="?page=settings">
+
+                        <div class="menuItem">
+                            <div class="menuPic">
+                                <img src="settings.png" width="40px" alt="Settings">
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+
                     <div class="menuItem" onclick="openBags()">
-                        B
+
+
+                        <div class="menuPic">
+                            <img src="backpack.png" width="40px" alt="">
+                        </div>
+
                     </div>
                 </div>
                 <div class="skillTree">
