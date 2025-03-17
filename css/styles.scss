@@ -367,6 +367,9 @@ input::placeholder {
 .popUp {
 	background-color: orange;
 	grid-area: i;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
 	
 }
 

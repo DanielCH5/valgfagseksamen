@@ -8,6 +8,13 @@ $page = $_GET['page'] ?? 'login';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php if ($page === 'login'): ?>
+        <title>Log In</title>
+    <?php elseif ($page === 'settings'): ?>
+        <title>Settings</title>
+    <?php elseif ($page === 'game'): ?>
+        <title>Game</title>
+    <?php endif; ?>
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -196,9 +203,9 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="popUp">
 
-                <div class="popupWindow">
+                    <div class="popupWindow">
 
-                </div>
+                    </div>
                 </div>
 
                 <div class="characterMenu" onload="setName()">

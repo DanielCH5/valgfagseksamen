@@ -240,6 +240,7 @@ const Player = {
 
 
 };
+
 function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
@@ -262,6 +263,8 @@ async function typeSentence(sentence) {
 
 function logOut() {
     localStorage.removeItem("userName");
+    localStorage.removeItem("equippedItems");
+    localStorage.removeItem("inventoryItems");
     window.location.href = '/?page=login';
 }
 
