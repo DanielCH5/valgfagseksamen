@@ -348,8 +348,19 @@ input::placeholder {
 }
 
 .miniMap {
-	background-color: red;
 	grid-area: c;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.map{
+	border-radius: 50%;
+	border: solid 5px black;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .popUp {

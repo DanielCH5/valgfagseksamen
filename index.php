@@ -189,7 +189,9 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="miniMap">
-
+                    <div class="map">
+                        <img src="map.png" width="100%" style="border-radius: 50%;" alt="">
+                    </div>
                 </div>
 
                 <div class="popUp">
