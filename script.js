@@ -16,6 +16,8 @@ const UI = {
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
     inventorySlotA: document.querySelector('.inventoryslotA'),
+    inventorySlotB: document.querySelector('.inventoryslotB'),
+    inventorySlotC: document.querySelector('.inventoryslotC'),
 };
 class Items {
     constructor(name, ID) {
@@ -110,9 +112,15 @@ const equippedItems = [
 ]
 
 
-const inventoryItems = [bfGun, bfSword, sfGun]
+const inventoryItems = [bfSword, sfGun, bfGun]
 
-
+document.querySelectorAll(".inventory div").forEach((slot, index) => {
+    slot.addEventListener("click", () => {
+        if (inventoryItems[index]) {
+            Player.equipItem(inventoryItems[index]);
+        }
+    });
+});
 const Player = {
     name: localStorage.getItem("userName"),
     stats: {
@@ -124,8 +132,8 @@ const Player = {
         spirit: 10,
     },
 
-    equipItem(item) {
-        const inventoryItem = item;
+    equipItem(id) {
+        const inventoryItem = id;
         const equipmentItem = equippedItems.find(({ type }) => type === inventoryItem.type);
         const iIndex = inventoryItems.indexOf(inventoryItem);
         const eIndex = equippedItems.indexOf(equipmentItem);
@@ -133,9 +141,12 @@ const Player = {
             equippedItems.splice(eIndex, 1, inventoryItem);
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
-        this.updateStats();
 
+
+        this.updateStats();
+        this.updateUI();
         return Player.stats;
+
 
 
     },
@@ -165,9 +176,47 @@ const Player = {
         UI.playerAgility.textContent = Player.stats.agility;
         UI.playerSpirit.textContent = Player.stats.spirit;
 
+    },
+
+    updateUI() {
+        // Update equipped items
+        const slots = {
+            10: "playerHead",
+            20: "playerChest",
+            30: "playerLegs",
+            70: "playerBoots",
+            40: "playerRing",
+            50: "playerSecondary",
+            60: "playerPrimary",
+        };
+    
+        equippedItems.forEach(item => {
+            const slotId = slots[item.type];
+            if (slotId) {
+                document.querySelector(`#${slotId} img`).src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+            }
+        });
+    
+        // Update inventory items
+        document.querySelectorAll(".inventory div").forEach((slot, index) => {
+            const item = inventoryItems[index];
+            const img = slot.querySelector("img");
+            if (item) {
+                if (!img) {
+                    const newImg = document.createElement("img");
+                    newImg.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+                    newImg.width = 30;
+                    newImg.alt = "";
+                    slot.appendChild(newImg);
+                } else {
+                    img.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+                }
+            } else {
+                if (img) slot.removeChild(img);
+            }
+        });
     }
-
-
+    
 
 };
 function setUsername() {

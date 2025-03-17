@@ -199,25 +199,25 @@ $page = $_GET['page'] ?? 'login';
                 <div class="characterMenu" onload="setName()">
                     <div class="characterItems">
                         <div id="playerHead">
-                            <img src="item1.png" alt="" >
+                            <img src="ironhelmet.png" alt="" >
                         </div>
                         <div id="playerChest">
-                            <img src="item2.png" alt="">
+                            <img src="ironchest.png" alt="">
                         </div>
                         <div id="playerLegs">
-                            <img src="item3.png" alt="">
+                            <img src="ironlegs.png" alt="">
                         </div>
                         <div id="playerBoots">
-                            <img src="boots.png" alt="">
+                            <img src="ironboots.png" alt="">
                         </div>
                         <div id="playerRing">
-                            <img src="ring1.png" alt="">
+                            <img src="ringofmagic.png" alt="">
                         </div>
                         <div id="playerPrimary">
-                            <img src="sword.png" alt="">
+                            <img src="ironsword.png" alt="">
                         </div>
                         <div id="playerSecondary">
-                            <img src="staff.png"  alt="">
+                            <img src="holystaff.png"  alt="">
                         </div>
                     </div>
                     <div class="characterStats">
@@ -289,13 +289,13 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="inventory">
                     <div class="inventoryslotA">
-                        <img src="bfsword.png" width="50px" alt="">
+                        <img src="bfsword.png" width="30px" alt="">
                     </div>
                     <div class="inventoryslotB">
-                        <img src="gun1.svg" width="50px" alt="">
+                        <img src="sfg9000.png" width="30px" alt="">
                     </div>
                     <div class="inventoryslotC">
-                        <img src="gun2.svg" width="50px" alt="">
+                        <img src="bfg9000.png" width="30px" alt="">
                     </div>
                     <div class="inventoryslotD">
 
