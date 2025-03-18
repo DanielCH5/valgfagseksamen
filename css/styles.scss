@@ -27,7 +27,9 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
 	background-color: black;
 }
-
+img {
+   pointer-events: none;
+}
 .container {
 	height: 100vh;
 }
@@ -452,8 +454,23 @@ cursor: pointer;
 	border: solid 3px grey;
 	grid-area: g;
 	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	gap: 20px;
 
 
+}
+
+.spellContainer div {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+.spellContainer div img {
+	width: 100px;
+	height: 100px;
+	border-radius: 16px;
+	border: solid 3px grey;
 }
 
 .menuOptionsB {

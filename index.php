@@ -210,7 +210,8 @@ $page = $_GET['page'] ?? 'login';
                         Open/close Inventory Window: B <br>
                         Open/close Skill Tree (not active): T <br> <br>
                         Or click the menu icons at the bottom! <br> <br>
-                        Click on items in your inventory to equip them to your character.
+                        Click on items in your inventory to equip them to your character. <br> <br>
+                        Cast spells using your keyboard buttons <br> Q, W, E, R.
                     </div>
                 </div>
 
@@ -357,7 +358,18 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="spellContainer">
-
+                    <div>
+                        <img src="spell1.png" alt="">
+                    </div>
+                    <div>
+                        <img src="spell2.png" alt="">
+                    </div>
+                    <div>
+                        <img src="spell3.png" alt="">
+                    </div>
+                    <div>
+                        <img src="spell4.png" alt="">
+                    </div>
                 </div>
                 <div class="menuOptionsB">
 

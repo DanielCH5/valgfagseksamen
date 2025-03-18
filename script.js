@@ -23,6 +23,8 @@ const UI = {
         this.popUp.innerHTML = "";
     }
 };
+
+
 class Items {
     constructor(name, ID) {
         this.name = name;
@@ -354,3 +356,38 @@ window.addEventListener("keydown", function (event) {
     }
 
 })
+
+window.addEventListener("keydown", function (event){
+    
+    if (event.key === "q" || event.key === "Q"){
+        UI.popUpCount++
+        if (UI.popUpCount >= 6) {
+            UI.clearPopup();
+        }
+        UI.popUp.innerHTML += "Firebolt has been cast <br>"
+    }
+    if (event.key === "w" || event.key === "W"){
+        UI.popUpCount++
+        if (UI.popUpCount >= 6) {
+            UI.clearPopup();
+        }
+        UI.popUp.innerHTML += "Runic Slash has been cast <br>"
+    }
+    if (event.key === "e" || event.key === "E"){
+        UI.popUpCount++
+        if (UI.popUpCount >= 6) {
+            UI.clearPopup();
+        }
+        UI.popUp.innerHTML += "Whirlwind has been cast <br>"
+    }
+    if (event.key === "r" || event.key === "R"){
+        UI.popUpCount++
+        if (UI.popUpCount >= 6) {
+            UI.clearPopup();
+        }
+        UI.popUp.innerHTML += "Nature's Grasp has been cast <br>"
+    }
+    
+})
+
+
