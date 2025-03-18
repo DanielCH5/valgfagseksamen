@@ -16,9 +16,10 @@ const UI = {
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
     popUp: document.querySelector('.popupWindow'),
+    popUpCount: 0,
 
-    async clearPopup() {
-        await waitFor(3000)
+    clearPopup() {
+        this.popUpCount = 0;
         this.popUp.innerHTML = "";
     }
 };
@@ -161,8 +162,11 @@ const Player = {
             equippedItems.splice(eIndex, 1, inventoryItem);
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
+        UI.popUpCount++;
+        if(UI.popUpCount >= 6){
+            UI.clearPopup();
+        }
         UI.popUp.innerHTML += `${id.name} has been equipped <br>`;
-        UI.clearPopup();
         this.updateStats();
         this.updateUI();
         saveEquippedItems();

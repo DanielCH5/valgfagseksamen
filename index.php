@@ -180,7 +180,7 @@ $page = $_GET['page'] ?? 'login';
                 <div class="playerUI">
                     <div class="playerIcon">
                         <div>
-
+                            <img src="player1.png" width="75px" alt="">
                         </div>
                     </div>
                     <div class="playerBars">
@@ -204,14 +204,14 @@ $page = $_GET['page'] ?? 'login';
                 <div class="popUp">
 
                     <div class="popupWindow">
-                        
+
                     </div>
                 </div>
 
                 <div class="characterMenu" onload="setName()">
                     <div class="characterItems">
                         <div class="characterTab">
-                        Character
+                            Character
                         </div>
                         <div id="playerHead">
                             <img src="ironhelmet.png" alt="">
@@ -241,11 +241,13 @@ $page = $_GET['page'] ?? 'login';
 
                         </div>
                         <div class="characterUsernameIcon">
-                            <div id="playerIcon">
-
-                            </div>
                             <div id="characterUsername" class="indtastetUsername">
 
+                            </div>
+                            <div id="playerIcon">
+                                <div class="playerIcon">
+                                    <img src="player1.png" width="100%" height="100%" alt="">
+                                </div>
                             </div>
                         </div>
 
@@ -332,12 +334,12 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="menuOptionsA">
-                    <div class="menuItem">
+                    <div class="menuItem" onclick="openCharacter()">
                         <div class="menuPic">
                             <img src="helmet.png" width="40px" alt="">
                         </div>
                     </div>
-                    <div class="menuItem">
+                    <div class="menuItem" onclick="openTree()">
                         <div class="menuPic">
                             <img src="tome.png" width="40px" alt="">
                         </div>
@@ -367,7 +369,7 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="skillTree">
-
+                    Work in progress
                 </div>
             </div>
 
