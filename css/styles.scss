@@ -368,12 +368,14 @@ input::placeholder {
 }
 
 .map{
-	border-radius: 50%;
-	border: solid 3px grey;
 	height: 100%;
+	width: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: end;
 
+}
+.map img{
+	border: solid 2px grey;
 }
 
 .popUp {
@@ -402,51 +404,28 @@ input::placeholder {
 }
 
 .inventory {
-	background-color: yellow;
+	background-color: rgb(61, 61, 61);
 	grid-area: e;
+	grid-template-rows: 1fr 5fr;
+	border: solid 3px grey;
+	padding: 10px;
+	display: none;
+
+	border-radius: 16px;
+}
+.inventorySlots{
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	gap: 5px;
-	border: solid 1px black;
-	padding: 10px;
-	display: none;
+}
+.inventoryTitle{
+	display: flex;
+	align-items: center;
+	padding-left: 5px;
+	color: white;
 }
 
-.inventoryslotA {
-	background-color: blue;
-}
-
-.inventoryslotB {
-	background-color: grey;
-}
-
-.inventoryslotC {
-	background-color: grey;
-}
-
-.inventoryslotD {
-	background-color: grey;
-}
-
-.inventoryslotE {
-	background-color: grey;
-}
-
-.inventoryslotF {
-	background-color: grey;
-}
-
-.inventoryslotG {
-	background-color: grey;
-}
-
-.inventoryslotH {
-	background-color: grey;
-}
-
-.inventoryslotI {
-	background-color: grey;
-}
 
 .menuOptionsA {
 	grid-area: f;
@@ -614,8 +593,10 @@ input::placeholder {
 	width: 30px;
 }
 
-.inventory div{
+.inventorySlots div{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: solid 1px white;
+	border-radius: 16px;
 }

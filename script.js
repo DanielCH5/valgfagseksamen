@@ -116,7 +116,7 @@ let equippedItems = [
 ]
 let inventoryItems = [bfSword, sfGun, bfGun]
 
-document.querySelectorAll(".inventory div").forEach((slot, index) => {
+document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
     slot.addEventListener("click", () => {
         if (inventoryItems[index]) {
             Player.equipItem(inventoryItems[index]);
@@ -223,7 +223,7 @@ const Player = {
         });
 
         // Update inventory items
-        document.querySelectorAll(".inventory div").forEach((slot, index) => {
+        document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
             const item = inventoryItems[index];
             const img = slot.querySelector("img");
             if (item) {

@@ -197,7 +197,7 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="miniMap">
                     <div class="map">
-                        <img src="map.png" width="100%" style="border-radius: 50%;" alt="">
+                        <img src="scene.png" width="200px" height="200px" style= "border-radius: 50%"alt="">
                     </div>
                 </div>
 
@@ -305,32 +305,37 @@ $page = $_GET['page'] ?? 'login';
                 </div>
 
                 <div class="inventory">
-                    <div class="inventoryslotA">
-                        <img src="bfsword.png" width="30px" alt="">
+                    <div class="inventoryTitle">
+                        Backpack
                     </div>
-                    <div class="inventoryslotB">
-                        <img src="sfg9000.png" width="30px" alt="">
-                    </div>
-                    <div class="inventoryslotC">
-                        <img src="bfg9000.png" width="30px" alt="">
-                    </div>
-                    <div class="inventoryslotD">
+                    <div class="inventorySlots">
+                        <div class="inventoryslotA">
+                            <img src="bfsword.png" width="50px" alt="">
+                        </div>
+                        <div class="inventoryslotB">
+                            <img src="sfg9000.png" width="50px" alt="">
+                        </div>
+                        <div class="inventoryslotC">
+                            <img src="bfg9000.png" width="50px" alt="">
+                        </div>
+                        <div class="inventoryslotD">
 
-                    </div>
-                    <div class="inventoryslotE">
+                        </div>
+                        <div class="inventoryslotE">
 
-                    </div>
-                    <div class="inventoryslotF">
+                        </div>
+                        <div class="inventoryslotF">
 
-                    </div>
-                    <div class="inventoryslotG">
+                        </div>
+                        <div class="inventoryslotG">
 
-                    </div>
-                    <div class="inventoryslotH">
+                        </div>
+                        <div class="inventoryslotH">
 
-                    </div>
-                    <div class="inventoryslotI">
+                        </div>
+                        <div class="inventoryslotI">
 
+                        </div>
                     </div>
                 </div>
                 <div class="menuOptionsA">
