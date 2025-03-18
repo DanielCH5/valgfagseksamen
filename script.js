@@ -132,8 +132,8 @@ function loadEquippedItems() {
     const savedInventory = localStorage.getItem("inventoryItems");
     if (savedItems) {
         equippedItems = JSON.parse(savedItems);
-        Player.updateUI(); // Refresh UI with loaded items
-        Player.updateStats(); // Refresh stats
+        Player.updateUI(); 
+        Player.updateStats(); 
     }
     if(savedInventory) {
         inventoryItems = JSON.parse(savedInventory);

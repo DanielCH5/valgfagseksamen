@@ -204,12 +204,15 @@ $page = $_GET['page'] ?? 'login';
                 <div class="popUp">
 
                     <div class="popupWindow">
-
+                        
                     </div>
                 </div>
 
                 <div class="characterMenu" onload="setName()">
                     <div class="characterItems">
+                        <div class="characterTab">
+                        Character
+                        </div>
                         <div id="playerHead">
                             <img src="ironhelmet.png" alt="">
                         </div>

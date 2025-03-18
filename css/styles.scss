@@ -274,7 +274,7 @@ input::placeholder {
 }
 
 .gameContainer {
-	background-color: grey;
+
 	width: 100%;
 	height: 100%;
 	display: grid;
@@ -290,7 +290,6 @@ input::placeholder {
 }
 
 .playerUI {
-	background-color: green;
 	grid-area: a;
 	display: grid;
 	grid-template-columns: 2fr 4fr;
@@ -327,6 +326,12 @@ input::placeholder {
 
 #playerName {
 	grid-area: a;
+	display: flex;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	border: solid 2px grey;
+	border-radius: 16px;
+	align-items: center;
 }
 
 .playerHP {
@@ -336,6 +341,7 @@ input::placeholder {
 	align-items: center;
 	background-color: red;
 	border-radius: 16px;
+	border: solid 2px grey;
 }
 
 .playerMana {
@@ -344,7 +350,7 @@ input::placeholder {
 	justify-content: center;
 	align-items: center;
 	background-color: blue;
-
+	border: solid 2px grey;
 	border-radius: 16px;
 }
 
@@ -358,26 +364,30 @@ input::placeholder {
 
 .map{
 	border-radius: 50%;
-	border: solid 5px black;
+	border: solid 3px grey;
 	height: 100%;
 	display: flex;
 	justify-content: center;
+
 }
 
 .popUp {
-	background-color: orange;
 	grid-area: i;
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
-	
-}
+	height: 300px;
+	align-self: end;
+	color: white;
+	border: solid 2px grey;
+	border-radius: 16px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+ }
 
-.characterMenu {
-	background-color: blue;
-	grid-area: d;
-	display: none;
-}
+
+
+
 
 .skillTree {
 	background-color: pink;
@@ -434,26 +444,27 @@ input::placeholder {
 }
 
 .menuOptionsA {
-	background-color: aqua;
 	grid-area: f;
 	display: flex;
 	align-items: end;
-	padding-bottom: 10px;
+	padding-bottom: 30px;
 	justify-content: space-evenly;
 }
 
 .spellContainer {
-	background-color: white;
+	border-radius: 16px;
+	border: solid 3px grey;
 	grid-area: g;
+	margin-top: 10px;
+
 
 }
 
 .menuOptionsB {
-	background-color: brown;
 	grid-area: h;
 	display: flex;
 	align-items: end;
-	padding-bottom: 10px;
+	padding-bottom: 30px;
 	justify-content: space-evenly;
 }
 
@@ -462,11 +473,14 @@ input::placeholder {
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
 	padding-left: 20px;
-	
+	background-color: grey;
+	grid-area: d;
+	border-radius: 16px;
+	border: solid 2px white;
 }
 
+
 .characterItems {
-	background-color: white;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(6, 1fr);
@@ -480,6 +494,16 @@ input::placeholder {
 		". . ."
 	;
 	padding-top: 0;
+}
+
+.characterTab {
+	grid-area: h;
+	width: 100%;
+	border: none !important;
+	border-radius: 0px !important;
+	border-bottom: solid 2px white !important;
+	justify-content: start !important;
+	color: white;
 }
 
 #playerHead {
@@ -512,12 +536,16 @@ input::placeholder {
 
 .characterItems div {
 	background-color: grey;
+	border: solid 2px white;
+	border-radius: 16px;
 	height: 100%;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .characterStats {
-	background-color: orange;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(8, 1fr);
@@ -532,20 +560,26 @@ input::placeholder {
 		"g g g"
 		"h h h"
 	;
+	color: white;
 	padding: 10px;
+	border-left: solid 2px white;
 }
 
 .characterUsernameIcon{
 	grid-area: b;
 	background-color: gray;
+	border: solid 2px white;
+	border-radius: 16px;
+	
 }
 
 
 .stat {
 	grid-column: 1 / span 3;
-	background-color: white;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+	border: solid 2px white;
+	border-radius: 16px;
 }
 
 .stat div {
@@ -554,13 +588,7 @@ input::placeholder {
 	align-items: center;
 }
 
-.characterItems div{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 .characterItems div img {
 	width: 30px;
 }
