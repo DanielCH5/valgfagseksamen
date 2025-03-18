@@ -27,9 +27,11 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
 	background-color: black;
 }
+
 img {
-   pointer-events: none;
+	pointer-events: none;
 }
+
 .container {
 	height: 100vh;
 }
@@ -233,14 +235,14 @@ input::placeholder {
 .settingsdivA {
 	grid-area: a;
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
 	gap: 20px;
 }
 
 .settingsdivB {
 	grid-area: b;
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
 	gap: 20px;
 }
 
@@ -269,8 +271,9 @@ input::placeholder {
 	border-radius: 16px;
 	padding: 10px;
 }
-.settingsbutton :hover{
-cursor: pointer;
+
+.settingsbutton :hover {
+	cursor: pointer;
 }
 
 
@@ -301,17 +304,18 @@ cursor: pointer;
 		"f f g g g g g g g g h h"
 	;
 	column-gap: 20px;
+	padding-top: 10px;
 }
 
 .playerUI {
 	grid-area: a;
 	display: grid;
-	grid-template-columns: 2fr 4fr;
+	grid-template-columns: 1fr 4fr;
 	color: white;
-	gap: 20px;
-	margin-bottom: 20px;
 	border: solid 2px grey;
 	border-radius: 16px;
+	padding: 10px;
+	margin-bottom: 5px;
 }
 
 .playerIcon {
@@ -324,8 +328,7 @@ cursor: pointer;
 .playerIcon div {
 	border: solid 2px grey;
 	border-radius: 50%;
-	width: 100px;
-	height: 100px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -339,15 +342,13 @@ cursor: pointer;
 		"a a a a"
 		"b b b b"
 		"c c c c";
-	gap: 10px;
-	padding: 10px;
+	gap: 5px;
 }
 
 #playerName {
 	grid-area: a;
 	display: flex;
 	padding-left: 10px;
-	padding-bottom: 5px;
 	border: solid 2px grey;
 	border-radius: 16px;
 	align-items: center;
@@ -381,15 +382,18 @@ cursor: pointer;
 	margin-bottom: 20px;
 }
 
-.map{
+.map {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: end;
 
 }
-.map img{
+
+.map img {
 	border: solid 5px grey;
+	width: 175px;
+	height: 175px;
 }
 
 .popUp {
@@ -404,7 +408,8 @@ cursor: pointer;
 	border-radius: 16px;
 	padding-bottom: 10px;
 	padding-left: 10px;
- }
+	padding-right: 10px;
+}
 
 
 
@@ -427,13 +432,15 @@ cursor: pointer;
 
 	border-radius: 16px;
 }
-.inventorySlots{
+
+.inventorySlots {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	gap: 5px;
 }
-.inventoryTitle{
+
+.inventoryTitle {
 	display: flex;
 	align-items: center;
 	padding-left: 5px;
@@ -455,7 +462,7 @@ cursor: pointer;
 	grid-area: g;
 	margin-top: 10px;
 	display: grid;
-	grid-template-columns: repeat(4,1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 20px;
 
 
@@ -466,9 +473,10 @@ cursor: pointer;
 	justify-content: center;
 	align-items: center;
 }
+
 .spellContainer div img {
-	width: 100px;
-	height: 100px;
+	width: 75px;
+	height: 75px;
 	border-radius: 16px;
 	border: solid 3px grey;
 }
@@ -484,7 +492,6 @@ cursor: pointer;
 .characterMenu {
 	display: none;
 	grid-template-columns: 1fr 1fr;
-	gap: 20px;
 	padding-left: 20px;
 	background-color: rgb(61, 61, 61);
 	grid-area: d;
@@ -506,7 +513,9 @@ cursor: pointer;
 		"f . g"
 		". . ."
 	;
-	padding-top: 0;
+	padding-top: 10px;
+	padding-right: 10px;
+	border-right: solid 2px grey;
 }
 
 .characterTab {
@@ -562,8 +571,7 @@ cursor: pointer;
 .characterStats {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(8, 1fr);
-	gap: 20px;
+	grid-template-rows: repeat(7, 1fr);
 	grid-template-areas:
 		"a a a"
 		"b b b"
@@ -572,29 +580,32 @@ cursor: pointer;
 		"e e e"
 		"f f f"
 		"g g g"
-		"h h h"
+
 	;
 	color: white;
 	padding: 10px;
-	border-left: solid 2px grey;
+	gap: 5px;
 	background-color: rgb(31, 31, 31);
 	border-radius: 16px;
+	height: 100%;
 }
 
-.characterUsernameIcon{
-	grid-area: b;
+.characterUsernameIcon {
+	grid-area: a;
 
 	border: solid 2px grey;
 	border-radius: 16px;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	
+
 }
+
 .characterUsernameIcon div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 #playerIcon div {
 	border: solid 1px grey;
 	border-radius: 50%;
@@ -603,6 +614,7 @@ cursor: pointer;
 
 
 }
+
 .stat {
 	grid-column: 1 / span 3;
 	display: grid;
@@ -622,7 +634,7 @@ cursor: pointer;
 	width: 30px;
 }
 
-.inventorySlots div{
+.inventorySlots div {
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -182,7 +182,7 @@ $page = $_GET['page'] ?? 'login';
                 <div class="playerUI">
                     <div class="playerIcon">
                         <div>
-                            <img src="player1.png" width="75px" alt="">
+                            <img src="player1.png" width="100%" alt="">
                         </div>
                     </div>
                     <div class="playerBars">
@@ -199,7 +199,7 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="miniMap">
                     <div class="map">
-                        <img src="scene.png" width="200px" height="200px" style="border-radius: 50%" alt="">
+                        <img src="scene.png" style="border-radius: 50%" alt="">
                     </div>
                 </div>
 
@@ -208,8 +208,7 @@ $page = $_GET['page'] ?? 'login';
                     <div class="popupWindow">
                         Open/close Character Window: C <br>
                         Open/close Inventory Window: B <br>
-                        Open/close Skill Tree (not active): T <br> <br>
-                        Or click the menu icons at the bottom! <br> <br>
+                        Open/close Skill Tree (not active): T <br>
                         Click on items in your inventory to equip them to your character. <br> <br>
                         Cast spells using your keyboard buttons <br> Q, W, E, R.
                     </div>
@@ -244,9 +243,6 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                     <div class="characterStats">
 
-                        <div class="statsTop">
-
-                        </div>
                         <div class="characterUsernameIcon">
                             <div id="characterUsername" class="indtastetUsername">
 
