@@ -16,7 +16,7 @@ const UI = {
     playerAgility: document.querySelector('.statNumber5'),
     playerSpirit: document.querySelector('.statNumber6'),
     popUp: document.querySelector('.popupWindow'),
-    popUpCount: 0,
+    popUpCount: 5,
 
     clearPopup() {
         this.popUpCount = 0;
@@ -133,10 +133,10 @@ function loadEquippedItems() {
     const savedInventory = localStorage.getItem("inventoryItems");
     if (savedItems) {
         equippedItems = JSON.parse(savedItems);
-        Player.updateUI(); 
-        Player.updateStats(); 
+        Player.updateUI();
+        Player.updateStats();
     }
-    if(savedInventory) {
+    if (savedInventory) {
         inventoryItems = JSON.parse(savedInventory);
         Player.updateUI();
         Player.updateStats();
@@ -163,7 +163,7 @@ const Player = {
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
         UI.popUpCount++;
-        if(UI.popUpCount >= 6){
+        if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += `${id.name} has been equipped <br>`;
@@ -270,6 +270,14 @@ function logOut() {
     localStorage.removeItem("equippedItems");
     localStorage.removeItem("inventoryItems");
     window.location.href = '/?page=login';
+}
+
+function changeName() {
+
+    localStorage.removeItem("userName");
+    window.location.href = '/?page=login';
+
+
 }
 
 function waitFor(ms) {

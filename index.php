@@ -53,7 +53,7 @@ $page = $_GET['page'] ?? 'login';
 
                             </div>
                             <div class="menuPic">
-                                <img src="gear.svg" width="40px" alt="Settings">
+                                <img src="settings.png" width="40px" alt="Settings">
                             </div>
                         </div>
                     </a>
@@ -71,13 +71,13 @@ $page = $_GET['page'] ?? 'login';
                         Settings
                     </div>
                     <div class="setting2">
-                        Settings
+                        Controls
                     </div>
                     <div class="setting3">
-                        Settings
+                        Game
                     </div>
                     <div class="setting4">
-                        Settings
+                        Video
                     </div>
                 </div>
 
@@ -88,15 +88,17 @@ $page = $_GET['page'] ?? 'login';
                                 Username
                             </div>
                             <div class="indtastetUsername">
-                                Username not entered. Please log out and enter your name.
+                                Please enter your username using the button below.
                             </div>
                         </div>
                         <div class="settingsPunkt">
                             <div>
-                                Resolution
+                                Switch names
                             </div>
                             <div>
-                                Resolution
+                                <div class="usernameChange" onclick="changeName()">
+                                    Change username
+                                </div>
                             </div>
                         </div>
                         <div class="settingsPunkt">
@@ -197,18 +199,22 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="miniMap">
                     <div class="map">
-                        <img src="scene.png" width="200px" height="200px" style= "border-radius: 50%"alt="">
+                        <img src="scene.png" width="200px" height="200px" style="border-radius: 50%" alt="">
                     </div>
                 </div>
 
                 <div class="popUp">
 
                     <div class="popupWindow">
-
+                        Open/close Character Window: C <br>
+                        Open/close Inventory Window: B <br>
+                        Open/close Skill Tree (not active): T <br> <br>
+                        Or click the menu icons at the bottom! <br> <br>
+                        Click on items in your inventory to equip them to your character.
                     </div>
                 </div>
 
-                <div class="characterMenu" onload="setName()">
+                <div class="characterMenu">
                     <div class="characterItems">
                         <div class="characterTab">
                             Character
@@ -374,6 +380,7 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="skillTree">
+                    Skill Tree
                     Work in progress
                 </div>
             </div>

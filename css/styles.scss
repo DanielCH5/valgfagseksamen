@@ -166,17 +166,18 @@ input::placeholder {
 }
 
 .settingscontainer {
-	background-color: grey;
+	background-color: rgb(61, 61, 61);
 	width: 100%;
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: 10% 80% 10%;
 	column-gap: 20px;
+	color: white;
 }
 
 .settingsnav {
-	background-color: red;
+	border-bottom: solid 3px grey;
 	grid-area: 1 / 1/ 1 / 13;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -187,6 +188,7 @@ input::placeholder {
 
 .setting1 {
 	grid-area: a;
+	background-color: rgb(112, 111, 111);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -197,6 +199,7 @@ input::placeholder {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .setting3 {
@@ -204,6 +207,7 @@ input::placeholder {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .setting4 {
@@ -214,7 +218,6 @@ input::placeholder {
 }
 
 .settingsmenu {
-	background-color: blue;
 	grid-area: 2 / 1 / 2 / 13;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -226,7 +229,6 @@ input::placeholder {
 }
 
 .settingsdivA {
-	background-color: aqua;
 	grid-area: a;
 	display: grid;
 	grid-template-rows: 2fr 1fr 1fr 1fr;
@@ -234,7 +236,6 @@ input::placeholder {
 }
 
 .settingsdivB {
-	background-color: red;
 	grid-area: b;
 	display: grid;
 	grid-template-rows: 2fr 1fr 1fr 1fr;
@@ -244,23 +245,34 @@ input::placeholder {
 
 
 .settingsPunkt {
-	background-color: yellow;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
+	border-bottom: solid 2px grey;
+	background-color: rgb(83, 83, 83)
 }
 
 .settingsPunkt div {
-	background-color: green;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-left: solid 2px grey;
+}
+
+.settingsPunkt div div {
+	background-color: rgb(83, 83, 83);
+	cursor: pointer;
+	border: solid 3px grey;
+	color: white;
+	border-radius: 16px;
+	padding: 10px;
+}
+.settingsbutton :hover{
+cursor: pointer;
 }
 
 
-
 .settingsbuttons {
-	background-color: orange;
 	grid-area: 3 / 1 / 3 / 13;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -375,7 +387,7 @@ input::placeholder {
 
 }
 .map img{
-	border: solid 2px grey;
+	border: solid 5px grey;
 }
 
 .popUp {
@@ -485,7 +497,7 @@ input::placeholder {
 	width: 100%;
 	border: none !important;
 	border-radius: 0px !important;
-	border-bottom: solid 2px white !important;
+	border-bottom: solid 2px grey !important;
 	justify-content: start !important;
 	color: white;
 	background-color: rgba(128, 128, 128, 0) !important;
@@ -520,8 +532,8 @@ input::placeholder {
 }
 
 .characterItems div {
-	background-color: grey;
-	border: solid 2px white;
+	background-color: rgb(83, 83, 83);
+	border: solid 2px grey;
 	border-radius: 16px;
 	height: 100%;
 	width: 100%;
@@ -555,7 +567,7 @@ input::placeholder {
 .characterUsernameIcon{
 	grid-area: b;
 
-	border: solid 2px white;
+	border: solid 2px grey;
 	border-radius: 16px;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
@@ -578,7 +590,7 @@ input::placeholder {
 	grid-column: 1 / span 3;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	border: solid 2px white;
+	border: solid 2px grey;
 	border-radius: 16px;
 }
 
@@ -597,6 +609,7 @@ input::placeholder {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: solid 1px white;
+	border: solid 2px grey;
 	border-radius: 16px;
+	background-color: rgb(83, 83, 83);
 }
