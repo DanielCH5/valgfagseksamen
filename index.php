@@ -204,13 +204,14 @@ $page = $_GET['page'] ?? 'login';
                 </div>
 
                 <div class="popUp">
-
                     <div class="popupWindow">
-                        Open/close Character Window: C <br>
-                        Open/close Inventory Window: B <br>
-                        Open/close Skill Tree (not active): T <br>
-                        Click on items in your inventory to equip them to your character. <br> <br>
-                        Cast spells using your keyboard buttons <br> Q, W, E, R.
+                        <p>For the best experience, enter fullscreen on your browser</p>
+                        <p>Open/close Character Window: C <br>
+                            Open/close Inventory Window: B <br>
+                            Open/close Skill Tree (not active): T <br>
+                            Click on items in your inventory to equip them to your character. <br>
+                            Cast spells using your keyboard buttons: Q, W, E, R.</p>
+
                     </div>
                 </div>
 

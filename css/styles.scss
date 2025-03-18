@@ -315,7 +315,7 @@ input::placeholder {
 	border: solid 2px grey;
 	border-radius: 16px;
 	padding: 10px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .playerIcon {
@@ -586,7 +586,7 @@ input::placeholder {
 	padding: 10px;
 	gap: 5px;
 	background-color: rgb(31, 31, 31);
-	border-radius: 16px;
+	border-radius: 0 16px 16px 0;
 	height: 100%;
 }
 
