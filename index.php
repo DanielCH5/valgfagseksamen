@@ -323,22 +323,22 @@ $page = $_GET['page'] ?? 'login';
                             <img src="bfg9000.png" width="50px" alt="">
                         </div>
                         <div class="inventoryslotD">
-
+                            <img src="leatherboots.png" width="30px" alt="">
                         </div>
                         <div class="inventoryslotE">
-
+                            <img src="ringofshadows.png" width="30px" alt="">
                         </div>
                         <div class="inventoryslotF">
-
+                            <img src="dragonarmor.png" width="30px" alt="">
                         </div>
                         <div class="inventoryslotG">
-
+                            <img src="demonstaff.png" width="30px" alt="">
                         </div>
                         <div class="inventoryslotH">
-
+                            <img src="conquerorhelmet.png" width="30px" alt="">
                         </div>
                         <div class="inventoryslotI">
-
+                            <img src="leatherkilt.png" width="30px" alt="">
                         </div>
                     </div>
                 </div>

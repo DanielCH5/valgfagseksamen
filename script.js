@@ -107,6 +107,12 @@ const ironSword = new Sword("Iron Sword", 7, 4);
 const bfGun = new Gun("BFG 9000", 8, 9000);
 const bfSword = new Sword("BF Sword", 9, 45);
 const sfGun = new Gun("sFG 9000", 10, 1);
+const leatherBoots = new Boots("Leather Boots", 11, 5);
+const shadowRing = new Ring("Ring Of Shadows", 12, 50);
+const dragonArmor = new Chest("Dragon Armor", 13, 100);
+const demonStaff = new Staff("Demon Staff", 14, 45);
+const conquerorHelmet = new Helmet("Conqueror Helmet", 15, 50);
+const leatherKilt = new Legs("Leather Kilt", 16, 15);
 let equippedItems = [
     ironHelmet,
     ironChest,
@@ -116,7 +122,7 @@ let equippedItems = [
     ironSword,
     priestStaff,
 ]
-let inventoryItems = [bfSword, sfGun, bfGun]
+let inventoryItems = [bfSword, sfGun, bfGun, leatherBoots, shadowRing, dragonArmor, demonStaff, conquerorHelmet, leatherKilt]
 
 document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
     slot.addEventListener("click", () => {
