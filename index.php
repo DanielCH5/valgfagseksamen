@@ -158,7 +158,7 @@ $page = $_GET['page'] ?? 'login';
 
                 <div class="settingsbuttons">
                     <div class="settingsbutton">
-                        <div onclick="logOut();">
+                        <div data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Log out
                         </div>
                     </div>
@@ -166,6 +166,25 @@ $page = $_GET['page'] ?? 'login';
                     <div class="settingsbutton">
                         <div onclick="GoBackWithRefresh();">
                             Back
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Log out?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                This will reset your items back to the original state and reset your username.<br>
+                                <b>Are you sure you want to log out?</b>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                <button type="button" class="btn btn-danger" onclick="logOut();">Log out</button>
+                            </div>
                         </div>
                     </div>
                 </div>
