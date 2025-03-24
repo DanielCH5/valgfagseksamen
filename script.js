@@ -25,7 +25,7 @@ const UI = {
 
 
 class Items {
-    constructor(name, ID) {
+    constructor(name, ID, rarity) {
         this.name = name;
         this.ID = ID;
         this.stats = {
@@ -36,82 +36,83 @@ class Items {
             spirit: 0,
             intellect: 0,
         }
+        this.rarity = rarity;
     }
 }
 class Helmet extends Items {
-    constructor(name, ID, stamina) {
-        super(name, ID);
+    constructor(name, ID, stamina, rarity) {
+        super(name, ID, rarity);
         this.type = 10;
         this.stats.stamina = this.stats.stamina + stamina;
     }
 
 }
 class Chest extends Items {
-    constructor(name, ID, vitality) {
-        super(name, ID);
+    constructor(name, ID, vitality, rarity) {
+        super(name, ID, rarity);
         this.type = 20;
         this.stats.vitality = this.stats.vitality + vitality;
     }
 }
 class Legs extends Items {
-    constructor(name, ID, agility) {
-        super(name, ID);
+    constructor(name, ID, agility, rarity) {
+        super(name, ID, rarity);
         this.type = 30;
         this.stats.agility = this.stats.agility + agility;
     }
 }
 class Boots extends Items {
-    constructor(name, ID, agility) {
-        super(name, ID);
+    constructor(name, ID, agility, rarity) {
+        super(name, ID, rarity);
         this.type = 70;
         this.stats.agility = this.stats.agility + agility;
     }
 }
 class Ring extends Items {
-    constructor(name, ID, intellect) {
-        super(name, ID);
+    constructor(name, ID, intellect, rarity) {
+        super(name, ID, rarity);
         this.type = 40;
         this.stats.intellect = this.stats.intellect + intellect;
     }
 }
 class Staff extends Items {
-    constructor(name, ID, spirit) {
-        super(name, ID);
+    constructor(name, ID, spirit, rarity) {
+        super(name, ID, rarity);
         this.type = 50;
         this.stats.spirit = this.stats.spirit + spirit;
     }
 }
 class Sword extends Items {
-    constructor(name, ID, strength) {
-        super(name, ID);
+    constructor(name, ID, strength, rarity) {
+        super(name, ID, rarity);
         this.type = 60;
         this.stats.strength = strength + this.stats.strength;
     }
 }
 class Gun extends Items {
-    constructor(name, ID, strength) {
-        super(name, ID, strength);
+    constructor(name, ID, strength, rarity) {
+        super(name, ID, rarity);
         this.type = 60;
         this.stats.strength = strength + this.stats.strength;
     }
 }
 
-const ironHelmet = new Helmet("Iron Helmet", 1, 1);
-const ironChest = new Chest("Iron Chest", 2, 1);
-const ironLegs = new Legs("Iron Legs", 3, 1);
-const ironBoots = new Boots("Iron Boots", 4, 2);
-const magicRing = new Ring("Ring of Magic", 5, 2);
-const priestStaff = new Staff("Holy Staff", 6, 3);
-const ironSword = new Sword("Iron Sword", 7, 4);
-const bfGun = new Gun("BFG 9000", 8, 9000);
-const bfSword = new Sword("BF Sword", 9, 45);
-const sfGun = new Gun("sFG 9000", 10, 1);
-const leatherBoots = new Boots("Leather Boots", 11, 5);
-const shadowRing = new Ring("Ring Of Shadows", 12, 50);
-const dragonArmor = new Chest("Dragon Armor", 13, 100);
-const demonStaff = new Staff("Demon Staff", 14, 45);
-const conquerorHelmet = new Helmet("Conqueror Helmet", 15, 50);
-const leatherKilt = new Legs("Leather Kilt", 16, 15);
+const ironHelmet = new Helmet("Iron Helmet", 1, 1, "Common");
+const ironChest = new Chest("Iron Chest", 2, 1, "Common");
+const ironLegs = new Legs("Iron Legs", 3, 1, "Common");
+const ironBoots = new Boots("Iron Boots", 4, 2, "Common");
+const magicRing = new Ring("Ring of Magic", 5, 2, "Uncommon");
+const priestStaff = new Staff("Holy Staff", 6, 3, "Uncommon");
+const ironSword = new Sword("Iron Sword", 7, 4, "Common");
+const bfGun = new Gun("BFG 9000", 8, 9000, "Legendary");
+const bfSword = new Sword("BF Sword", 9, 45, "Epic");
+const sfGun = new Gun("sFG 9000", 10, 1, "Rare");
+const leatherBoots = new Boots("Leather Boots", 11, 5, "Uncommon");
+const shadowRing = new Ring("Ring Of Shadows", 12, 50, "Epic");
+const dragonArmor = new Chest("Dragon Armor", 13, 100, "Legendary");
+const demonStaff = new Staff("Demon Staff", 14, 45, "Epic");
+const conquerorHelmet = new Helmet("Conqueror Helmet", 15, 50, "Epic");
+const leatherKilt = new Legs("Leather Kilt", 16, 15, "Rare");
 let equippedItems = [
     ironHelmet,
     ironChest,
@@ -177,10 +178,6 @@ const Player = {
         this.updateStats();
         this.updateUI();
         saveEquippedItems();
-
-
-
-
     },
 
     updateStats() {
@@ -212,7 +209,6 @@ const Player = {
 
     updateUI() {
         initializePopovers();
-
         // Update equipped items
         const slots = {
             10: "playerHead",
@@ -235,8 +231,10 @@ const Player = {
                 slot.setAttribute("data-bs-toggle", "popover");
                 slot.setAttribute("data-bs-trigger", "hover");
                 slot.setAttribute("data-bs-html", "true");
+                slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
                 slot.setAttribute("data-bs-title", item.name);
                 slot.setAttribute("data-bs-content", `
+                    <b><span class="${item.rarity}-rarity">${item.rarity}</span> </b> item<br>
                     <b>Strength:</b> ${item.stats.strength || 0}<br>
                     <b>Intellect:</b> ${item.stats.intellect || 0}<br>
                     <b>Vitality:</b> ${item.stats.vitality || 0}<br>
@@ -246,8 +244,7 @@ const Player = {
                 `);
             }
         });
-        
-
+    
         // Reinitialize Bootstrap Popovers
         updateInventory();
     }
@@ -287,9 +284,11 @@ function updateInventory() {
             slot.setAttribute("data-bs-toggle", "popover");
             slot.setAttribute("data-bs-trigger", "hover");
             slot.setAttribute("data-bs-html", "true");
+            slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
             slot.setAttribute("data-bs-title", item.name);
             slot.setAttribute("data-bs-content", `
                 <em>Left-click to equip</em></br>
+                <b><span class="${item.rarity}-rarity">${item.rarity}</span> </b> item<br>
                 <b>Strength:</b> ${item.stats.strength || 0}<br>
                 <b>Intellect:</b> ${item.stats.intellect || 0}<br>
                 <b>Vitality:</b> ${item.stats.vitality || 0}<br>

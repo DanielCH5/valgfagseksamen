@@ -395,6 +395,7 @@ input::placeholder {
 	width: 175px;
 	height: 175px;
 }
+
 //test
 .popUp {
 	grid-area: i;
@@ -641,4 +642,61 @@ input::placeholder {
 	border: solid 2px grey;
 	border-radius: 16px;
 	background-color: rgb(83, 83, 83);
+}
+
+
+.Common-popover {
+	--bs-popover-border-color: var(--bs-gray);
+	--bs-popover-header-bg: var(--bs-gray);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.Uncommon-popover {
+	--bs-popover-border-color: var(--bs-green);
+	--bs-popover-header-bg: var(--bs-green);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.Rare-popover {
+	--bs-popover-border-color: var(--bs-blue);
+	--bs-popover-header-bg: var(--bs-blue);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.Epic-popover {
+	--bs-popover-border-color: var(--bs-indigo);
+	--bs-popover-header-bg: var(--bs-indigo);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.Legendary-popover {
+	--bs-popover-border-color: var(--bs-orange);
+	--bs-popover-header-bg: var(--bs-orange);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+
+.Common-rarity {
+	color: $gray-500 ;
+}
+
+.Uncommon-rarity {
+	color: #198754;
+}
+
+.Rare-rarity {
+	color: #0d6efd;
+}
+
+.Epic-rarity {
+	color: #6610f2;
+}
+
+.Legendary-rarity {
+	color: #fd7e14;
 }
