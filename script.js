@@ -1,4 +1,3 @@
-
 const UI = {
     nameInput: document.querySelector('.submit-name-input'),
     loginButton: document.querySelector('.login-btn'),
@@ -212,6 +211,8 @@ const Player = {
     },
 
     updateUI() {
+        initializePopovers();
+
         // Update equipped items
         const slots = {
             10: "playerHead",
@@ -226,13 +227,49 @@ const Player = {
         equippedItems.forEach(item => {
             const slotId = slots[item.type];
             if (slotId) {
-                document.querySelector(`#${slotId} img`).src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+                const slot = document.querySelector(`#${slotId}`);
+                const img = slot.querySelector("img");
+                if (img) img.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+
+                // Add Bootstrap popover attributes
+                slot.setAttribute("data-bs-toggle", "popover");
+                slot.setAttribute("data-bs-trigger", "hover");
+                slot.setAttribute("data-bs-html", "true");
+                slot.setAttribute("data-bs-title", item.name);
+                slot.setAttribute("data-bs-content", `
+                    <b>Strength:</b> ${item.stats.strength || 0}<br>
+                    <b>Intellect:</b> ${item.stats.intellect || 0}<br>
+                    <b>Vitality:</b> ${item.stats.vitality || 0}<br>
+                    <b>Stamina:</b> ${item.stats.stamina || 0}<br>
+                    <b>Agility:</b> ${item.stats.agility || 0}<br>
+                    <b>Spirit:</b> ${item.stats.spirit || 0}
+                `);
             }
         });
+        
 
-        // Update inventory items
-        document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
-            const item = inventoryItems[index];
+        // Reinitialize Bootstrap Popovers
+        updateInventory();
+    }
+};
+function initializePopovers() {
+    // Destroy any existing popovers to prevent duplicates
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
+        const popoverInstance = bootstrap.Popover.getInstance(popover);
+        if (popoverInstance) {
+            popoverInstance.dispose(); // Remove previous popover
+        }
+    });
+
+    // Reinitialize all popovers
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
+        new bootstrap.Popover(popover);
+    });
+}
+function updateInventory() {
+    document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
+        const item = inventoryItems[index];
+        if (item) {
             const img = slot.querySelector("img");
             if (item) {
                 if (!img) {
@@ -247,11 +284,26 @@ const Player = {
             } else {
                 if (img) slot.removeChild(img);
             }
-        });
-    }
+            slot.setAttribute("data-bs-toggle", "popover");
+            slot.setAttribute("data-bs-trigger", "hover");
+            slot.setAttribute("data-bs-html", "true");
+            slot.setAttribute("data-bs-title", item.name);
+            slot.setAttribute("data-bs-content", `
+                <em>Left-click to equip</em></br>
+                <b>Strength:</b> ${item.stats.strength || 0}<br>
+                <b>Intellect:</b> ${item.stats.intellect || 0}<br>
+                <b>Vitality:</b> ${item.stats.vitality || 0}<br>
+                <b>Stamina:</b> ${item.stats.stamina || 0}<br>
+                <b>Agility:</b> ${item.stats.agility || 0}<br>
+                <b>Spirit:</b> ${item.stats.spirit || 0}
+            `);
+        }
+    });
 
-
+    // Reinitialize popovers for inventory
+    initializePopovers();
 };
+
 
 function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
@@ -310,6 +362,7 @@ function setName() {
     UI.indtastetUsername.forEach((userName) => {
         userName.textContent = Player.name
     });
+    Player.updateUI();
     loadEquippedItems();
     Player.updateStats(); //and stats
 
@@ -363,37 +416,37 @@ window.addEventListener("keydown", function (event) {
 
 })
 
-window.addEventListener("keydown", function (event){
-    
-    if (event.key === "q" || event.key === "Q"){
+window.addEventListener("keydown", function (event) {
+
+    if (event.key === "q" || event.key === "Q") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += "Firebolt has been cast <br>"
     }
-    if (event.key === "w" || event.key === "W"){
+    if (event.key === "w" || event.key === "W") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += "Runic Slash has been cast <br>"
     }
-    if (event.key === "e" || event.key === "E"){
+    if (event.key === "e" || event.key === "E") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += "Whirlwind has been cast <br>"
     }
-    if (event.key === "r" || event.key === "R"){
+    if (event.key === "r" || event.key === "R") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += "Nature's Grasp has been cast <br>"
     }
-    
+
 })
 
 

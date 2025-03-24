@@ -313,32 +313,41 @@ $page = $_GET['page'] ?? 'login';
                         Backpack
                     </div>
                     <div class="inventorySlots">
-                        <div class="inventoryslotA">
-                            <img src="bfsword.png" width="50px" alt="">
+                        <div class="inventoryslotA" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="50px" alt="">
                         </div>
-                        <div class="inventoryslotB">
-                            <img src="sfg9000.png" width="50px" alt="">
+                        <div class="inventoryslotB" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="50px" alt="">
                         </div>
-                        <div class="inventoryslotC">
-                            <img src="bfg9000.png" width="50px" alt="">
+                        <div class="inventoryslotC" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="50px" alt="">
                         </div>
-                        <div class="inventoryslotD">
-                            <img src="leatherboots.png" width="30px" alt="">
+                        <div class="inventoryslotD" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
-                        <div class="inventoryslotE">
-                            <img src="ringofshadows.png" width="30px" alt="">
+                        <div class="inventoryslotE" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
-                        <div class="inventoryslotF">
-                            <img src="dragonarmor.png" width="30px" alt="">
+                        <div class="inventoryslotF" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
-                        <div class="inventoryslotG">
-                            <img src="demonstaff.png" width="30px" alt="">
+                        <div class="inventoryslotG" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
-                        <div class="inventoryslotH">
-                            <img src="conquerorhelmet.png" width="30px" alt="">
+                        <div class="inventoryslotH" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
-                        <div class="inventoryslotI">
-                            <img src="leatherkilt.png" width="30px" alt="">
+                        <div class="inventoryslotI" class="equipment-slot" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-html="true" title="" data-bs-content="">
+                            <img src="" width="30px" alt="">
                         </div>
                     </div>
                 </div>
