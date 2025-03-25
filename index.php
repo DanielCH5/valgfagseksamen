@@ -211,10 +211,8 @@ $page = $_GET['page'] ?? 'login';
 
                         </div>
                         <div class="playerHP">
-                            10,000/10,000
                         </div>
                         <div class="playerMana">
-                            5,000/5,000
                         </div>
                     </div>
                 </div>
@@ -395,7 +393,7 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="spellContainer">
                     <div>
-                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                        <div class="spell" id="spell1" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
                             data-bs-title="Firebolt (Q)" data-bs-content="Throws a ball of fire that causes 100 + (50% of Intellect) Fire damage."
                             data-bs-custom-class="spell-popover">
                             <div>
@@ -405,7 +403,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                        <div class="spell" id="spell2" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
                             data-bs-title="Runic Slash (W)" data-bs-content="Slashes in a circle dealing 100 + (50% of Strength) Physical dmg"
                             data-bs-custom-class="melee-popover">
                             <div>
@@ -415,7 +413,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                        <div class="spell" id="spell3" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
                             data-bs-title="Whirlwind (E)" data-bs-content="Knocks enemy into the air and stuns for 1 + (5% of Spirit) seconds"
                             data-bs-custom-class="control-popover">
                             <div>
@@ -425,7 +423,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                        <div class="spell" id="spell4" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
                             data-bs-title="Nature's Grasp (R)" data-bs-content="Heals for 100 + (250% of Vitality) HP"
                             data-bs-custom-class="support-popover">
                             <div>

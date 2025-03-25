@@ -8,6 +8,12 @@ const UI = {
     skillTree: document.querySelector('.skillTree'),
     characterMenu: document.querySelector('.characterMenu'),
     playerUI: document.querySelector('.playerUI'),
+    playerHP: document.querySelector('.playerHP'),
+    playerMana: document.querySelector('.playerMana'),
+    spell1:document.getElementById('spell1'),
+    spell2:document.getElementById('spell2'),
+    spell3:document.getElementById('spell3'),
+    spell4:document.getElementById('spell4'),
     playerStrength: document.querySelector('.statNumber1'),
     playerIntellect: document.querySelector('.statNumber2'),
     playerVitality: document.querySelector('.statNumber3'),
@@ -21,6 +27,7 @@ const UI = {
         this.popUpCount = 0;
         this.popUp.innerHTML = "";
     }
+
 };
 
 
@@ -245,6 +252,10 @@ const Player = {
                 `);
             }
         });
+        const HP = (Player.stats.vitality * 10) + 1000;
+        const mana = (Player.stats.intellect * 50) + 1000;
+        UI.playerHP.innerHTML = `${HP.toLocaleString('en-US')}/${HP.toLocaleString('en-US')}`;
+        UI.playerMana.innerHTML = `${mana.toLocaleString('en-US')}/${mana.toLocaleString('en-US')}`;
     
         // Reinitialize Bootstrap Popovers
         updateInventory();
