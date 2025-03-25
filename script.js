@@ -431,7 +431,7 @@ window.addEventListener("keydown", function (event) {
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
-        UI.popUp.innerHTML += `Runic Slash deals ${(Player.stats.strength * 0.5) + 200} Physical dmg <br>`
+        UI.popUp.innerHTML += `Runic Slash deals ${(Player.stats.strength * 0.5) + 100} Physical dmg <br>`
     }
     if (event.key === "e" || event.key === "E") {
         UI.popUpCount++
