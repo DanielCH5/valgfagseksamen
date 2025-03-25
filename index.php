@@ -96,7 +96,9 @@ $page = $_GET['page'] ?? 'login';
                                 Switch names
                             </div>
                             <div>
-                                <div class="usernameChange" onclick="changeName()">
+                                <div class="usernameChange" onclick="changeName()" data-bs-trigger="hover"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="This will send you back to the login page to change your username, but you keep your items.">
                                     Change username
                                 </div>
                             </div>
@@ -373,27 +375,53 @@ $page = $_GET['page'] ?? 'login';
                 <div class="menuOptionsA">
                     <div class="menuItem" onclick="openCharacter()">
                         <div class="menuPic">
+                            <div>
+                                <p>C</p>
+                            </div>
                             <img src="helmet.png" width="40px" alt="">
                         </div>
                     </div>
                     <div class="menuItem" onclick="openTree()">
                         <div class="menuPic">
+                            <div>
+                                <p>T</p>
+                            </div>
                             <img src="tome.png" width="40px" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="spellContainer">
                     <div>
-                        <img src="spell1.png" alt="">
+                        <div class="spell">
+                            <div>
+                                <p>Q</p>
+                            </div>
+                            <img src="spell1.png" alt="">
+                        </div>
                     </div>
                     <div>
-                        <img src="spell2.png" alt="">
+                        <div class="spell">
+                            <div>
+                                <p>W</p>
+                            </div>
+                            <img src="spell2.png" alt="">
+                        </div>
                     </div>
                     <div>
-                        <img src="spell3.png" alt="">
+                        <div class="spell">
+                            <div>
+                                <p>E</p>
+                            </div>
+                            <img src="spell3.png" alt="">
+                        </div>
                     </div>
                     <div>
-                        <img src="spell4.png" alt="">
+                        <div class="spell">
+                            <div>
+                                <p>R</p>
+                            </div>
+                            <img src="spell4.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="menuOptionsB">
@@ -402,6 +430,7 @@ $page = $_GET['page'] ?? 'login';
 
                         <div class="menuItem">
                             <div class="menuPic">
+
                                 <img src="settings.png" width="40px" alt="Settings">
                             </div>
                         </div>
@@ -411,6 +440,9 @@ $page = $_GET['page'] ?? 'login';
 
 
                         <div class="menuPic">
+                            <div>
+                                <p>B</p>
+                            </div>
                             <img src="backpack.png" width="40px" alt="">
                         </div>
 

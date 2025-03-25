@@ -123,33 +123,44 @@ input::placeholder {
 }
 
 .menuItem {
-	background-color: grey;
 	width: 50px;
 	height: 50px;
 	display: flex;
-	flex-direction: column;
 	border-radius: 10px;
 	color: white;
+	background-color: grey;
 
 }
 
 .menuItem:hover {
 	cursor: pointer;
-	background-color: white;
+	background-color: rgba(80, 80, 80, 0.411);
+
 }
 
-.menuItemKey {
-	margin-left: 5px;
-}
+
 
 .menuPic {
+	width: 100%;
+	height: 100%;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	
+}
+.menuPic div {
+	position: absolute;
 	width: 100%;
 	height: 100%;
-}
 
+}
+.menuPic div p {
+	position: absolute;
+	top: 0;
+	left: 5px;
+}
 .inputCursor {
 	width: 2px;
 	height: 2rem;
@@ -470,7 +481,7 @@ input::placeholder {
 }
 
 .spellContainer div {
-	display: grid;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
@@ -699,4 +710,20 @@ input::placeholder {
 
 .Legendary-rarity {
 	color: #fd7e14;
+}
+.spell {
+	position: relative;
+}
+
+.spell div{
+	position: absolute;
+	color: white;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.247);
+}
+.spell div p {
+	position: absolute;
+	top: 0;
+	left: 10px;
 }

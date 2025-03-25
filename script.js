@@ -231,6 +231,7 @@ const Player = {
                 slot.setAttribute("data-bs-toggle", "popover");
                 slot.setAttribute("data-bs-trigger", "hover");
                 slot.setAttribute("data-bs-html", "true");
+                slot.setAttribute("data-bs-placement", "left");
                 slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
                 slot.setAttribute("data-bs-title", item.name);
                 slot.setAttribute("data-bs-content", `
@@ -284,6 +285,7 @@ function updateInventory() {
             slot.setAttribute("data-bs-toggle", "popover");
             slot.setAttribute("data-bs-trigger", "hover");
             slot.setAttribute("data-bs-html", "true");
+            slot.setAttribute("data-bs-placement", "left");
             slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
             slot.setAttribute("data-bs-title", item.name);
             slot.setAttribute("data-bs-content", `
