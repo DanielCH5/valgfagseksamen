@@ -424,30 +424,30 @@ window.addEventListener("keydown", function (event) {
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
-        UI.popUp.innerHTML += "Firebolt has been cast <br>"
+        UI.popUp.innerHTML += `Firebolt deals ${(Player.stats.intellect * 0.5) + 100} Fire dmg <br>`
     }
     if (event.key === "w" || event.key === "W") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
-        UI.popUp.innerHTML += "Runic Slash has been cast <br>"
+        UI.popUp.innerHTML += `Runic Slash deals ${(Player.stats.strength * 0.5) + 200} Physical dmg <br>`
     }
     if (event.key === "e" || event.key === "E") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
-        UI.popUp.innerHTML += "Whirlwind has been cast <br>"
+        UI.popUp.innerHTML += `Whirlwind stuns for ${(Player.stats.spirit * 0.05) + 1} seconds <br>`
     }
     if (event.key === "r" || event.key === "R") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
         }
-        UI.popUp.innerHTML += "Nature's Grasp has been cast <br>"
-    }
+        UI.popUp.innerHTML += `Nature's Grasp heals for ${(Player.stats.vitality * 2.5) + 100} HP <br>`
 
-})
+}}
+)
 
 

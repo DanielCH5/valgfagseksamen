@@ -451,6 +451,9 @@ input::placeholder {
 	grid-template-rows: 1fr 1fr 1fr;
 	gap: 5px;
 }
+.inventorySlots :hover {
+	cursor: pointer;
+}
 
 .inventoryTitle {
 	display: flex;
@@ -656,6 +659,34 @@ input::placeholder {
 }
 
 
+.spell-popover {
+	--bs-popover-border-color: var(--bs-orange);
+	--bs-popover-header-bg: var(--bs-orange);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.melee-popover {
+	--bs-popover-border-color: var(--bs-blue);
+	--bs-popover-header-bg: var(--bs-blue);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.control-popover {
+	--bs-popover-border-color: var(--bs-indigo);
+	--bs-popover-header-bg: var(--bs-indigo);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
+.support-popover {
+	--bs-popover-border-color: var(--bs-green);
+	--bs-popover-header-bg: var(--bs-green);
+	--bs-popover-header-color: var(--bs-white);
+	--bs-popover-bg: var(--bs-dark);
+	--bs-popover-body-color: var(--bs-white);
+}
 .Common-popover {
 	--bs-popover-border-color: var(--bs-gray);
 	--bs-popover-header-bg: var(--bs-gray);

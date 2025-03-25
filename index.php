@@ -373,7 +373,9 @@ $page = $_GET['page'] ?? 'login';
                     </div>
                 </div>
                 <div class="menuOptionsA">
-                    <div class="menuItem" onclick="openCharacter()">
+                    <div class="menuItem" onclick="openCharacter()" data-bs-trigger="hover" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Open Character Menu(C)"
+                        data-bs-custom-class="Common-popover">
                         <div class="menuPic">
                             <div>
                                 <p>C</p>
@@ -381,7 +383,8 @@ $page = $_GET['page'] ?? 'login';
                             <img src="helmet.png" width="40px" alt="">
                         </div>
                     </div>
-                    <div class="menuItem" onclick="openTree()">
+                    <div class="menuItem" onclick="openTree()" data-bs-trigger="hover" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Open Skill Tree(T)" data-bs-custom-class="Common-popover">
                         <div class="menuPic">
                             <div>
                                 <p>T</p>
@@ -392,7 +395,9 @@ $page = $_GET['page'] ?? 'login';
                 </div>
                 <div class="spellContainer">
                     <div>
-                        <div class="spell">
+                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                            data-bs-title="Firebolt (Q)" data-bs-content="Throws a ball of fire that causes 100 + (50% of Intellect) Fire damage."
+                            data-bs-custom-class="spell-popover">
                             <div>
                                 <p>Q</p>
                             </div>
@@ -400,7 +405,9 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell">
+                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                            data-bs-title="Runic Slash (W)" data-bs-content="Slashes in a circle dealing 100 + (50% of Strength) Physical dmg"
+                            data-bs-custom-class="melee-popover">
                             <div>
                                 <p>W</p>
                             </div>
@@ -408,7 +415,9 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell">
+                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                            data-bs-title="Whirlwind (E)" data-bs-content="Knocks enemy into the air and stuns for 1 + (5% of Spirit) seconds"
+                            data-bs-custom-class="control-popover">
                             <div>
                                 <p>E</p>
                             </div>
@@ -416,7 +425,9 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div>
-                        <div class="spell">
+                        <div class="spell" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                            data-bs-title="Nature's Grasp (R)" data-bs-content="Heals for 100 + (250% of Vitality) HP"
+                            data-bs-custom-class="support-popover">
                             <div>
                                 <p>R</p>
                             </div>
@@ -428,7 +439,8 @@ $page = $_GET['page'] ?? 'login';
 
                     <a href="?page=settings">
 
-                        <div class="menuItem">
+                        <div class="menuItem" data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="top"
+                            data-bs-content="Open Settings" data-bs-custom-class="Common-popover">
                             <div class="menuPic">
 
                                 <img src="settings.png" width="40px" alt="Settings">
@@ -436,9 +448,8 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </a>
 
-                    <div class="menuItem" onclick="openBags()">
-
-
+                    <div class="menuItem" onclick="openBags()" data-bs-trigger="hover" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Open Backpack(B)" data-bs-custom-class="Common-popover">
                         <div class="menuPic">
                             <div>
                                 <p>B</p>
