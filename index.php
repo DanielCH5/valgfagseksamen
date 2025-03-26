@@ -274,7 +274,7 @@ $page = $_GET['page'] ?? 'login';
                             </div>
                         </div>
 
-
+        <!--Test-->
                         <div class="stat">
                             <div class="statName">
                                 Strength:
