@@ -1,3 +1,4 @@
+//Henter alt relevant UI data fra DOM
 const UI = {
     nameInput: document.querySelector('.submit-name-input'),
     loginButton: document.querySelector('.login-btn'),
@@ -10,10 +11,10 @@ const UI = {
     playerUI: document.querySelector('.playerUI'),
     playerHP: document.querySelector('.playerHP'),
     playerMana: document.querySelector('.playerMana'),
-    spell1:document.getElementById('spell1'),
-    spell2:document.getElementById('spell2'),
-    spell3:document.getElementById('spell3'),
-    spell4:document.getElementById('spell4'),
+    spell1: document.getElementById('spell1'),
+    spell2: document.getElementById('spell2'),
+    spell3: document.getElementById('spell3'),
+    spell4: document.getElementById('spell4'),
     playerStrength: document.querySelector('.statNumber1'),
     playerIntellect: document.querySelector('.statNumber2'),
     playerVitality: document.querySelector('.statNumber3'),
@@ -30,7 +31,7 @@ const UI = {
 
 };
 
-
+//Alle objekter, klasser og funktioner relatereret til items
 class Items {
     constructor(name, ID, rarity) {
         this.name = name;
@@ -103,7 +104,6 @@ class Gun extends Items {
         this.stats.strength = strength + this.stats.strength;
     }
 }
-
 const ironHelmet = new Helmet("Iron Helmet", 1, 1, "Common");
 const ironChest = new Chest("Iron Chest", 2, 1, "Common");
 const ironLegs = new Legs("Iron Legs", 3, 1, "Common");
@@ -130,7 +130,7 @@ let equippedItems = [
     priestStaff,
 ]
 let inventoryItems = [bfSword, sfGun, bfGun, leatherBoots, shadowRing, dragonArmor, demonStaff, conquerorHelmet, leatherKilt]
-
+//Event listener til inventory item slots der tilføjer equipItem ved click.
 document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
     slot.addEventListener("click", () => {
         if (inventoryItems[index]) {
@@ -138,11 +138,69 @@ document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
         }
     });
 });
+function initializePopovers() {
+    // Destroy any existing popovers to prevent duplicates
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
+        const popoverInstance = bootstrap.Popover.getInstance(popover);
+        if (popoverInstance) {
+            popoverInstance.dispose(); // Remove previous popover
+        }
+    });
 
+    // Reinitialize all popovers
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
+        new bootstrap.Popover(popover);
+    });
+}
+//Skifter/eller tilføjer tilsvarende billede til item og tilføjer Bootstrap popover funktioner.
+function updateInventory() {
+    document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
+        const item = inventoryItems[index];
+        if (item) {
+            const img = slot.querySelector("img");
+            if (item) {
+                if (!img) {
+                    const newImg = document.createElement("img");
+                    newImg.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+                    newImg.width = 30;
+                    newImg.alt = "";
+                    slot.appendChild(newImg);
+                } else {
+                    img.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
+                }
+            } else {
+                if (img) slot.removeChild(img);
+            }
+            slot.setAttribute("data-bs-toggle", "popover");
+            slot.setAttribute("data-bs-trigger", "hover");
+            slot.setAttribute("data-bs-html", "true");
+            slot.setAttribute("data-bs-placement", "left");
+            slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
+            slot.setAttribute("data-bs-title", item.name);
+            slot.setAttribute("data-bs-content", `
+                <em>Left-click to equip</em></br>
+                <b><span class="${item.rarity}-rarity">${item.rarity}</span> </b> item<br>
+                <b>Strength:</b> ${item.stats.strength || 0}<br>
+                <b>Intellect:</b> ${item.stats.intellect || 0}<br>
+                <b>Vitality:</b> ${item.stats.vitality || 0}<br>
+                <b>Stamina:</b> ${item.stats.stamina || 0}<br>
+                <b>Agility:</b> ${item.stats.agility || 0}<br>
+                <b>Spirit:</b> ${item.stats.spirit || 0}
+            `);
+        }
+    });
+
+    // Reinitialize popovers for inventory
+    initializePopovers();
+};
+//Laver equippedItems og inventoryItems til strings og gemmer dem i localStorage
+//så de kan læses ordentligt senere.
 function saveEquippedItems() {
     localStorage.setItem("equippedItems", JSON.stringify(equippedItems));
     localStorage.setItem("inventoryItems", JSON.stringify(inventoryItems));
 }
+//Henter det gemte fra localStorage og gemmer dem i variabler. 
+// JSON.parse efter for at omdanne dem tilbage til deres originale state og opdatererer UI og stats.
 function loadEquippedItems() {
     const savedItems = localStorage.getItem("equippedItems");
     const savedInventory = localStorage.getItem("inventoryItems");
@@ -157,6 +215,7 @@ function loadEquippedItems() {
         Player.updateStats();
     }
 }
+//Spiller objekt + funktioner
 const Player = {
     name: localStorage.getItem("userName"),
     stats: {
@@ -167,7 +226,8 @@ const Player = {
         agility: 10,
         spirit: 10,
     },
-
+    //Finder det item i spilleren's equipment der matcher den valgte type og
+    //bytter om på de to, samt sætter dem samme sted i deres forskellige arrays.
     equipItem(id) {
         const inventoryItem = id;
         const equipmentItem = equippedItems.find(({ type }) => type === inventoryItem.type);
@@ -177,6 +237,7 @@ const Player = {
             equippedItems.splice(eIndex, 1, inventoryItem);
             inventoryItems.splice(iIndex, 1, equipmentItem);
         };
+        //Incrementer UI.popUpCount med 1 og clearer popup hvis den kommer over 6.
         UI.popUpCount++;
         if (UI.popUpCount >= 6) {
             UI.clearPopup();
@@ -256,72 +317,18 @@ const Player = {
         const mana = (Player.stats.intellect * 50) + 1000;
         UI.playerHP.innerHTML = `${HP.toLocaleString('en-US')}/${HP.toLocaleString('en-US')}`;
         UI.playerMana.innerHTML = `${mana.toLocaleString('en-US')}/${mana.toLocaleString('en-US')}`;
-    
+
         // Reinitialize Bootstrap Popovers
         updateInventory();
     }
 };
-function initializePopovers() {
-    // Destroy any existing popovers to prevent duplicates
-    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
-        const popoverInstance = bootstrap.Popover.getInstance(popover);
-        if (popoverInstance) {
-            popoverInstance.dispose(); // Remove previous popover
-        }
-    });
 
-    // Reinitialize all popovers
-    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
-        new bootstrap.Popover(popover);
-    });
-}
-function updateInventory() {
-    document.querySelectorAll(".inventorySlots div").forEach((slot, index) => {
-        const item = inventoryItems[index];
-        if (item) {
-            const img = slot.querySelector("img");
-            if (item) {
-                if (!img) {
-                    const newImg = document.createElement("img");
-                    newImg.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
-                    newImg.width = 30;
-                    newImg.alt = "";
-                    slot.appendChild(newImg);
-                } else {
-                    img.src = `${item.name.toLowerCase().replace(/\s/g, '')}.png`;
-                }
-            } else {
-                if (img) slot.removeChild(img);
-            }
-            slot.setAttribute("data-bs-toggle", "popover");
-            slot.setAttribute("data-bs-trigger", "hover");
-            slot.setAttribute("data-bs-html", "true");
-            slot.setAttribute("data-bs-placement", "left");
-            slot.setAttribute("data-bs-custom-class", `${item.rarity}-popover`);
-            slot.setAttribute("data-bs-title", item.name);
-            slot.setAttribute("data-bs-content", `
-                <em>Left-click to equip</em></br>
-                <b><span class="${item.rarity}-rarity">${item.rarity}</span> </b> item<br>
-                <b>Strength:</b> ${item.stats.strength || 0}<br>
-                <b>Intellect:</b> ${item.stats.intellect || 0}<br>
-                <b>Vitality:</b> ${item.stats.vitality || 0}<br>
-                <b>Stamina:</b> ${item.stats.stamina || 0}<br>
-                <b>Agility:</b> ${item.stats.agility || 0}<br>
-                <b>Spirit:</b> ${item.stats.spirit || 0}
-            `);
-        }
-    });
-
-    // Reinitialize popovers for inventory
-    initializePopovers();
-};
-
-
+//Gemmer username i localStorage og kører greetUser efterfølgende.
 function setUsername() {
     localStorage.setItem("userName", UI.nameInput.value);
     greetUser();
 }
-
+//Typewriter funktion + redirect til game page.
 async function typeSentence(sentence) {
     const letters = sentence.split("");
     UI.inputCursor.style.display = "inline-block";
@@ -336,26 +343,25 @@ async function typeSentence(sentence) {
     window.location.href = '/?page=game';
 
 }
-
+//Fjerner alt gemt i localStorage og sender brugeren tilbage til login siden.
 function logOut() {
     localStorage.removeItem("userName");
     localStorage.removeItem("equippedItems");
     localStorage.removeItem("inventoryItems");
     window.location.href = '/?page=login';
 }
-
+//Fjerner username fra localStorage og sender brugeren tilbage til login siden for at sætte et nyt brugernavn.
+//Items bliver IKKE slettet fra localStorage.
 function changeName() {
-
     localStorage.removeItem("userName");
     window.location.href = '/?page=login';
-
-
 }
-
+//waitFor promise.
 function waitFor(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
+//Hvis username er gemt i localStorage, så hent det, fjern username input felt, disable login knap og ændrer text
+//til logging in samt kører typewriter funktion.
 function greetUser() {
     if (localStorage.getItem("userName")) {
         const userName = localStorage.getItem("userName");
@@ -367,6 +373,9 @@ function greetUser() {
         return;
     }
 }
+
+//Sætter alle username felter til spillerens navn, opdaterer UI'et, loader de forskellige items der er gemt
+//og opdaterer stats.
 function setName() {
     if (!Player.name) {
         return;
@@ -379,7 +388,7 @@ function setName() {
     Player.updateStats(); //and stats
 
 }
-
+//Tilbage funktion men MED et refresh.
 function GoBackWithRefresh(event) {
     if ('referrer' in document) {
         window.location = document.referrer;
@@ -387,7 +396,7 @@ function GoBackWithRefresh(event) {
         window.history.back();
     }
 }
-
+// Åbner inventory
 function openBags() {
     const bagVisibility = UI.inventory.style.display;
     if (bagVisibility === "" || bagVisibility === "none") {
@@ -396,6 +405,7 @@ function openBags() {
         UI.inventory.style.display = "none";
     }
 }
+// Åbner skill tre
 function openTree() {
     const treeVisibility = UI.skillTree.style.display;
     if (treeVisibility === "" || treeVisibility === "none") {
@@ -405,6 +415,7 @@ function openTree() {
         UI.skillTree.style.display = "none";
     }
 }
+// Åbner characterMenu
 function openCharacter() {
     const characterVisibility = UI.characterMenu.style.display;
     if (characterVisibility === "" || characterVisibility === "none") {
@@ -414,7 +425,9 @@ function openCharacter() {
         UI.characterMenu.style.display = "none";
     }
 }
+                                              //Event listeners  
 
+//Menu knapper eventlisteners
 window.addEventListener("keydown", function (event) {
     if (event.key === "b" || event.key === "B") {
         openBags();
@@ -427,9 +440,9 @@ window.addEventListener("keydown", function (event) {
     }
 
 })
-
+//Spell event listeners + increment til popupcount samt tilføjer tekst til popup vindue og beregner dmg
+//baseret på stats.
 window.addEventListener("keydown", function (event) {
-
     if (event.key === "q" || event.key === "Q") {
         UI.popUpCount++
         if (UI.popUpCount >= 6) {
@@ -457,8 +470,8 @@ window.addEventListener("keydown", function (event) {
             UI.clearPopup();
         }
         UI.popUp.innerHTML += `Nature's Grasp heals for ${(Player.stats.vitality * 2.5) + 100} HP <br>`
-
-}}
+    }
+}
 )
 
 
