@@ -262,7 +262,7 @@ $page = $_GET['page'] ?? 'login';
                         </div>
                     </div>
                     <div class="characterStats">
-a
+
                         <div class="characterUsernameIcon">
                             <div id="characterUsername" class="indtastetUsername">
 
@@ -274,7 +274,7 @@ a
                             </div>
                         </div>
 
-        <!--Test-->
+        
                         <div class="stat">
                             <div class="statName">
                                 Strength:
